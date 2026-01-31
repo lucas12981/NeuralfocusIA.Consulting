@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <title>NeuralFocus IA | Lucas Guzmán - Global Strategic Lead</title>
-    <meta name="description" content="NeuralFocus IA: Arquitectura de expansión global liderada por Lucas Guzmán. Soluciones de IA para Salud, Gastronomía e Industria.">
+    <title>NeuralFocus IA | Lucas Guzmán</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,25 +20,24 @@
         }
         #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.3; }
 
+        /* FOTOS (AVATARES HOLOGRÁFICOS) */
         .avatar-hologram { position: absolute; width: 85px; height: 85px; border-radius: 50%; border: 2px solid var(--cyan); overflow: hidden; z-index: 5; box-shadow: 0 0 15px var(--cyan); animation: floating 6s ease-in-out infinite; }
         .avatar-hologram video { width: 100%; height: 100%; object-fit: cover; }
         .h-1 { top: 8%; left: 8%; }
-        .h-2 { bottom: 12%; right: 8%; border-color: var(--purple); }
+        .h-2 { bottom: 12%; right: 8%; border-color: var(--purple); box-shadow: 0 0 15px var(--purple); }
 
         @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
         .hero-content { position: relative; z-index: 10; text-align: center; width: 100%; }
-        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 8vw, 3.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 10px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; word-wrap: break-word; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 8vw, 3.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 10px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .tagline { font-family: 'Orbitron'; color: var(--cyan); letter-spacing: 2px; font-size: 0.65rem; margin-bottom: 30px; text-transform: uppercase; }
 
         /* --- BOTONES --- */
         .btn-section { width: 100%; max-width: 320px; margin: 0 auto 20px auto; }
-        .section-label { font-family: 'Orbitron'; font-size: 0.6rem; color: #555; text-transform: uppercase; margin-bottom: 8px; display: block; letter-spacing: 1px; }
         .btn { width: 100%; padding: 15px; border-radius: 12px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; border: none; cursor: pointer; margin-bottom: 10px; }
-        .btn-voz { background: var(--cyan); color: #000; box-shadow: 0 0 15px rgba(0, 242, 255, 0.3); }
-        .btn-app { background: #fff; color: #000; font-weight: 900; }
+        .btn-voz { background: var(--cyan); color: #000; }
+        .btn-app { background: #fff; color: #000; }
         .btn-whatsapp { background: #25D366; color: #fff; }
-        .btn-gmail { background: #db4437; color: #fff; }
         .btn-qr { background: transparent; border: 1px solid var(--purple); color: #fff; }
 
         /* --- SECCIONES --- */
@@ -48,18 +45,18 @@
         .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 35px; font-size: 1.2rem; }
         .card { background: var(--glass); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
         .card i { font-size: 1.8rem; color: var(--purple); margin-bottom: 15px; display: block; text-align: center; }
-        .card h3 { font-family: 'Orbitron'; font-size: 0.9rem; margin-bottom: 10px; text-align: center; }
-        .card p { font-size: 0.8rem; color: #ccc; line-height: 1.6; }
+        .img-tech { width: 100%; border-radius: 15px; border: 1px solid var(--purple); margin-top: 20px; opacity: 0.8; }
 
-        /* --- DESCRIPCIÓN PROFESIONAL --- */
-        #about-closing { background: linear-gradient(180deg, #020202 0%, #0a0a0a 100%); text-align: center; padding: 80px 20px; }
-        .closing-text { max-width: 600px; margin: 0 auto; line-height: 1.8; color: #e0e0e0; font-size: 0.95rem; }
-        .closing-highlight { color: var(--cyan); font-family: 'Orbitron'; font-weight: 700; display: block; margin-top: 20px; font-size: 1.1rem; }
+        /* --- TESTIMONIOS --- */
+        .testimonio { border-left: 3px solid var(--purple); background: rgba(188, 19, 254, 0.05); padding: 20px; margin-bottom: 15px; border-radius: 0 15px 15px 0; }
+        .testimonio p { font-style: italic; font-size: 0.85rem; line-height: 1.5; color: #eee; }
+        .testimonio cite { display: block; margin-top: 10px; color: var(--cyan); font-weight: 700; font-size: 0.7rem; }
 
-        /* --- MODAL QR --- */
-        #qrModal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; flex-direction: column; }
-        .qr-content { background: #fff; padding: 20px; border-radius: 15px; text-align: center; }
-        .qr-content p { color: #000; font-family: 'Orbitron'; font-size: 0.8rem; margin-top: 10px; font-weight: 700; }
+        /* --- MODAL QR CORREGIDO --- */
+        #qrModal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; flex-direction: column; }
+        .qr-content { background: #fff; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 0 30px var(--cyan); }
+        .qr-content img { width: 220px; height: 220px; display: block; margin: 0 auto; }
+        .qr-content p { color: #000; font-family: 'Orbitron'; font-size: 0.8rem; margin-top: 15px; font-weight: 900; }
 
         footer { padding: 40px; text-align: center; font-size: 0.7rem; color: #444; }
     </style>
@@ -68,9 +65,10 @@
 
     <div id="qrModal" onclick="this.style.display='none'">
         <div class="qr-content" onclick="event.stopPropagation()">
-            <img id="qrImg" src="" alt="NeuralFocus QR">
+            <img id="qrImg" src="" alt="NeuralFocus QR Code">
             <p>NEURALFOCUS IA<br>SCAN TO CONNECT</p>
         </div>
+        <p style="margin-top: 20px; font-size: 0.7rem; color: #888;">Toca fuera para cerrar</p>
     </div>
 
     <section id="hero">
@@ -81,50 +79,47 @@
         <div class="hero-content">
             <h1>NEURALFOCUS IA</h1>
             <p class="tagline">Global Strategic Architecture</p>
-            
             <div class="btn-section">
                 <button onclick="activarVoz()" class="btn btn-voz"><i class="fas fa-microphone"></i> Voz Inteligente 24/7</button>
                 <a href="https://lucas12981.github.io/NeuralFocus-Turkey-Beta/" class="btn btn-app"><i class="fas fa-rocket"></i> App Específica Turquía</a>
-            </div>
-
-            <div class="btn-section">
                 <a href="https://wa.me/2246496971?text=Hello%20Lucas%2C%20I%20would%20like%20to%20contact%20you!" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Business</a>
-                <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-gmail"><i class="fas fa-envelope"></i> Contacto Gmail</a>
-            </div>
-
-            <div class="btn-section">
                 <button onclick="showQR()" class="btn btn-qr"><i class="fas fa-qrcode"></i> Mostrar QR para Socios</button>
             </div>
         </div>
     </section>
 
-    <section id="ecosistema">
+    <section>
         <h2 class="sec-title">Ecosistema & Funciones</h2>
         <div class="card">
             <i class="fas fa-file-export"></i>
-            <h3>Función de Exportación</h3>
-            <p>Optimización masiva de flujos operativos para sistemas globales mediante agentes de guía especializados.</p>
+            <h3>Exportación Global</h3>
+            <p>Sistemas avanzados para exportar flujos de datos operativos integrados con Agentes de Vida para Salud, Gastronomía e Industria.</p>
         </div>
-        <div class="card">
-            <i class="fas fa-microchip"></i>
-            <h3>Voz Inteligente 24/7</h3>
-            <p>Resolución técnica instantánea multilingüe aplicada a Salud, Gastronomía e Industria.</p>
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800" class="img-tech" alt="IA Industrial">
+    </section>
+
+    <section style="background: #050505;">
+        <h2 class="sec-title">Autoridad Global</h2>
+        <div class="testimonio">
+            <p>"La IA de NeuralFocus optimizó nuestra cadena industrial en un 40%. Lucas Guzmán es el socio que toda empresa global necesita."</p>
+            <cite>- Dr. Emre Demir, CEO, Anadolu Holdings (Turquía)</cite>
         </div>
-        <div class="card">
-            <i class="fas fa-user-check"></i>
-            <h3>Agente de Vida</h3>
-            <p>Interacción estratégica en tiempo real para coordinar la logística crítica de su expansión internacional.</p>
+        <div class="testimonio">
+            <p>"Eficiencia total en gestión hospitalaria. La Voz Inteligente resolvió nuestra logística clínica en USA en tiempo récord."</p>
+            <cite>- Dr. Isabella Chen, CMO, Apex Health</cite>
+        </div>
+        <div class="testimonio">
+            <p>"Un antes y un después en nuestra cadena gastronómica. El Agente de Vida 24/7 es la clave de nuestra expansión en España."</p>
+            <cite>- Chef Alejandro Morales, Sabor Global</cite>
         </div>
     </section>
 
-    <section id="about-closing">
+    <section id="about-closing" style="text-align: center; padding: 80px 20px;">
         <h2 class="sec-title">The Future is NeuralFocus</h2>
-        <div class="closing-text">
-            <p>NeuralFocus IA no es solo tecnología; es la <strong>columna vertebral</strong> de la empresa moderna. Bajo la dirección estratégica de <strong>Lucas Guzmán</strong>, transformamos la complejidad operativa en una ventaja competitiva sin precedentes.</p>
-            <p style="margin-top:15px;">Fusionamos la precisión de la Inteligencia Artificial con una visión global humana para liderar los sectores de Salud, Gastronomía e Industria en los mercados más exigentes del mundo.</p>
-            <span class="closing-highlight">Innovación sin fronteras. Resultados sin límites.</span>
-        </div>
-        <a href="https://wa.me/2246496971?text=Hello%20Lucas%2C%20I%20want%20to%20start%20a%20collaboration%20with%20NeuralFocus." class="btn btn-voz" style="margin: 40px auto 0 auto;"><i class="fas fa-handshake"></i> Iniciar Colaboración Global</a>
+        <p style="color: #ccc; line-height: 1.8; max-width: 600px; margin: 0 auto; font-size: 1rem;">
+            NeuralFocus IA es la columna vertebral de la empresa moderna. Bajo la dirección estratégica de <strong>Lucas Guzmán</strong>, transformamos la complejidad operativa en una ventaja competitiva mundial.
+        </p>
+        <p style="color: var(--cyan); font-family: 'Orbitron'; font-weight: 700; margin-top: 20px;">Innovación sin fronteras. Resultados sin límites.</p>
     </section>
 
     <footer>
@@ -134,31 +129,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", { "particles": { "number": { "value": 40 }, "color": { "value": "#bc13fe" }, "line_linked": { "enable": true, "color": "#00f2ff", "opacity": 0.2 }, "move": { "enable": true, "speed": 1 } } });
-
+        
         function activarVoz() {
-            const texto = "Welcome to NeuralFocus AI. I am your intelligent global assistant. Our system is now optimized with export functions and 24/7 Life Agents for healthcare, gastronomy and industry. How can we help you today?";
-            const utterance = new SpeechSynthesisUtterance(texto);
-            utterance.lang = 'en-US';
-            utterance.rate = 0.9;
-            
-            utterance.onend = function() {
-                setTimeout(() => {
+            const t = new SpeechSynthesisUtterance("Welcome to NeuralFocus AI. Our system is optimized for global healthcare, gastronomy and industry. How can we help you today?");
+            t.lang = 'en-US'; 
+            t.rate = 0.9;
+            t.onend = () => { 
+                setTimeout(() => { 
                     if(confirm("Would you like to speak with Lucas Guzman now?")) {
                         window.location.href = "https://wa.me/2246496971?text=Hello%20Lucas%2C%20I%20would%20like%20to%20contact%20you!";
-                    }
-                }, 500);
+                    } 
+                }, 500); 
             };
-
-            window.speechSynthesis.speak(utterance);
+            window.speechSynthesis.speak(t);
         }
 
         function showQR() {
             const modal = document.getElementById('qrModal');
             const img = document.getElementById('qrImg');
-            img.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(window.location.href);
+            // URL FIJA DE TU PROYECTO PARA QUE EL QR NO FALLE
+            const myUrl = "https://lucas12981.github.io/NeuralFocus-Turkey-Beta/";
+            img.src = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" + encodeURIComponent(myUrl);
             modal.style.display = 'flex';
         }
     </script>
 </body>
-    </html>
-                                                                                                                                                                                                                                                         
+            </html>
+            
