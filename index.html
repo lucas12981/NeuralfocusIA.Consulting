@@ -18,21 +18,21 @@
 
         /* --- HERO --- */
         #hero { 
-            height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; 
-            position: relative; background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%); overflow: hidden; padding: 20px;
+            min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            position: relative; background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%); overflow: hidden; padding: 40px 20px;
         }
         #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.3; }
 
         .avatar-hologram { position: absolute; width: 85px; height: 85px; border-radius: 50%; border: 2px solid var(--cyan); overflow: hidden; z-index: 5; box-shadow: 0 0 15px var(--cyan); animation: floating 6s ease-in-out infinite; }
         .avatar-hologram video { width: 100%; height: 100%; object-fit: cover; }
-        .h-1 { top: 8%; left: 8%; }
-        .h-2 { bottom: 12%; right: 8%; border-color: var(--purple); }
+        .h-1 { top: 5%; left: 8%; }
+        .h-2 { bottom: 10%; right: 8%; border-color: var(--purple); }
 
         @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
         .hero-content { position: relative; z-index: 10; text-align: center; width: 100%; }
-        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.5rem, 8vw, 3.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 10px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tagline { font-family: 'Orbitron'; color: var(--cyan); letter-spacing: 2px; font-size: 0.65rem; margin-bottom: 30px; text-transform: uppercase; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.8rem, 8vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 10px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { font-family: 'Orbitron'; color: var(--cyan); letter-spacing: 2px; font-size: 0.7rem; margin-bottom: 30px; text-transform: uppercase; }
 
         /* --- BUTTONS --- */
         .btn-section { width: 100%; max-width: 320px; margin: 0 auto 20px auto; }
@@ -43,19 +43,21 @@
         .btn-mail { background: #ea4335; color: #fff; }
 
         /* --- SECTIONS --- */
-        section { padding: 60px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 35px; font-size: 1.2rem; }
-        .card { background: var(--glass); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
-        .card i { font-size: 1.8rem; color: var(--purple); margin-bottom: 15px; display: block; text-align: center; }
-        .card h3 { font-family: 'Orbitron'; font-size: 0.9rem; margin-bottom: 10px; text-align: center; color: var(--cyan); }
-        .card p { font-size: 0.8rem; color: #ccc; line-height: 1.6; text-align: center; }
+        section { padding: 80px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 45px; font-size: 1.4rem; letter-spacing: 3px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .card { background: var(--glass); padding: 30px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.1); transition: 0.4s; position: relative; overflow: hidden; }
+        .card:hover { border-color: var(--cyan); transform: translateY(-5px); background: rgba(255,255,255,0.08); }
+        .card i { font-size: 2rem; color: var(--purple); margin-bottom: 20px; display: block; text-align: center; }
+        .card h3 { font-family: 'Orbitron'; font-size: 1rem; margin-bottom: 15px; text-align: center; color: var(--cyan); }
+        .card p { font-size: 0.85rem; color: #ccc; line-height: 1.6; text-align: center; }
 
         /* --- TESTIMONIALS --- */
-        .testimonio { border-left: 3px solid var(--purple); background: rgba(188, 19, 254, 0.05); padding: 20px; margin-bottom: 15px; border-radius: 0 15px 15px 0; }
-        .testimonio p { font-style: italic; font-size: 0.85rem; line-height: 1.5; color: #eee; }
-        .testimonio cite { display: block; margin-top: 10px; color: var(--cyan); font-weight: 700; font-size: 0.7rem; }
+        .testimonio { border-left: 3px solid var(--purple); background: rgba(188, 19, 254, 0.05); padding: 25px; margin-bottom: 20px; border-radius: 0 20px 20px 0; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .testimonio p { font-style: italic; font-size: 0.9rem; line-height: 1.5; color: #eee; }
+        .testimonio cite { display: block; margin-top: 12px; color: var(--cyan); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
 
-        footer { padding: 40px; text-align: center; font-size: 0.7rem; color: #444; }
+        footer { padding: 50px; text-align: center; font-size: 0.75rem; color: #555; background: #010101; }
     </style>
 </head>
 <body>
@@ -67,79 +69,93 @@
 
         <div class="hero-content">
             <h1>NEURALFOCUS AI</h1>
-            <p class="tagline">Global AI Automation Agency</p>
+            <p class="tagline">Global AI & Marketing Architecture</p>
             <div class="btn-section">
-                <button onclick="activarVoz()" class="btn btn-voz"><i class="fas fa-microphone"></i> Listen to AI CEO</button>
-                <a href="https://lucas12981.github.io/Lale-Turkey/" class="btn btn-app"><i class="fas fa-rocket"></i> Turkish Smart App</a>
-                <a href="https://wa.me/5492246496971?text=Hello%20Lucas,%20I%20want%20to%20automate%20my%20business." class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-                <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-mail"><i class="fas fa-envelope"></i> Contact via Email</a>
+                <button onclick="activarVoz()" class="btn btn-voz"><i class="fas fa-microphone"></i> IA Voice Briefing</button>
+                <a href="https://lucas12981.github.io/Lale-Turkey/" class="btn btn-app"><i class="fas fa-rocket"></i> Turkish Market App</a>
+                <a href="https://wa.me/5492246496971?text=Hello%20Lucas,%20I%20want%20to%20scale%20my%20business%20with%20AI." class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp CEO</a>
+                <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-mail"><i class="fas fa-envelope"></i> Business Email</a>
             </div>
         </div>
     </section>
 
     <section id="ecosystem">
-        <h2 class="sec-title">AI Automation Services</h2>
+        <h2 class="sec-title">Strategic Ecosystem</h2>
         
-        <div class="card">
-            <i class="fas fa-robot"></i>
-            <h3>AI Lead Generation (SDRs)</h3>
-            <p>We build automated Outbound systems. Our AI agents prospect, qualify, and send hyper-personalized messages on LinkedIn and Email, filling your calendar with high-ticket meetings on autopilot.</p>
-        </div>
+        <div class="services-grid">
+            <div class="card">
+                <i class="fas fa-robot"></i>
+                <h3>AI Lead Generation (SDRs)</h3>
+                <p>Automated high-ticket prospecting. We deploy AI agents that qualify and book meetings on LinkedIn and Email 24/7.</p>
+            </div>
 
-        <div class="card">
-            <i class="fas fa-headset"></i>
-            <h3>24/7 AI Sales Assistants</h3>
-            <p>Never miss a customer again. We deploy intelligent conversational agents for WhatsApp and websites that answer technical queries, qualify leads, and close sales 24/7 in over 10 languages.</p>
-        </div>
+            <div class="card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 AI Sales Assistants</h3>
+                <p>Intelligent assistants for WhatsApp and Web. They answer, qualify, and close sales in 10+ languages instantly.</p>
+            </div>
 
-        <div class="card">
-            <i class="fas fa-project-diagram"></i>
-            <h3>Workflow Automation</h3>
-            <p>Eliminate repetitive manual tasks. We create seamless integrations using Make and Zapier to connect your CRM, emails, and software ecosystem, saving hundreds of hours and reducing human error.</p>
-        </div>
+            <div class="card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Workflow Automation</h3>
+                <p>Seamless integration of your business tools using Make and Zapier to eliminate manual operational tasks.</p>
+            </div>
 
-        <div class="card">
-            <i class="fas fa-brain"></i>
-            <h3>Custom AI Model Training</h3>
-            <p>Turn your company data into your biggest asset. We train private AI models with your specific business knowledge (RAG) to create internal tools that make your team and operations 10x faster.</p>
-        </div>
+            <div class="card">
+                <i class="fas fa-search-dollar"></i>
+                <h3>International SEO Optimization</h3>
+                <p>Dominating global search results. We optimize your digital presence to rank #1 in the Turkish and European markets.</p>
+            </div>
 
-        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800" style="width:100%; border-radius:15px; margin-top:20px; opacity:0.8; border:1px solid var(--purple);" alt="Industrial AI">
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>High-Performance AI Web Dev</h3>
+                <p>Building lightning-fast, conversion-oriented websites and "App-like" experiences tailored for mobile users.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-brain"></i>
+                <h3>Custom AI Data Training</h3>
+                <p>We train private LLMs with your company's data, creating internal brains that boost team productivity by 10x.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Multilingual Media & Content</h3>
+                <p>Leveraging high-level Turkish media networks (Haber7, CNNTurk) to position your brand with absolute authority.</p>
+            </div>
+        </div>
     </section>
 
     <section style="background: #050505;">
         <h2 class="sec-title">Global Authority</h2>
         <div class="testimonio">
-            <p>"NeuralFocus AI completely automated our customer support. The AI Sales Assistant handles 80% of our WhatsApp traffic instantly, increasing our conversion rate by 40%."</p>
-            <cite>- Executive Director, Automotive Sector (Turkey)</cite>
+            <p>"NeuralFocus AI revolutionized our industrial digital presence. Their International SEO and AI assistants gave us a massive competitive edge in Turkey."</p>
+            <cite>- Industrial Sector Director, Istanbul</cite>
         </div>
         <div class="testimonio">
-            <p>"The custom AI data training changed how our team works. Finding internal documents and medical protocols now takes seconds instead of hours."</p>
-            <cite>- Operations Manager, Health Clinics</cite>
-        </div>
-        <div class="testimonio">
-            <p>"Their AI SDRs booked more qualified meetings for us in a month than our human team did in a quarter. Pure efficiency."</p>
-            <cite>- B2B Tech Agency CEO</cite>
+            <p>"The best high-performance web development I've seen. Fast, futuristic, and designed to convert. Lucas is a top-tier strategist."</p>
+            <cite>- Tech Founder, UAE</cite>
         </div>
     </section>
 
-    <section id="about-closing" style="text-align: center; padding: 80px 20px;">
-        <h2 class="sec-title">The Future is Automated</h2>
-        <p style="color: #ccc; line-height: 1.8; max-width: 700px; margin: 0 auto; font-size: 1rem;">
-            NeuralFocus AI represents the vanguard of business automation. Under the strategic direction of <strong>Lucas Guzmán</strong>, we implement productized AI solutions that transform operational complexity into massive profit margins.
+    <section id="about-closing" style="text-align: center;">
+        <h2 class="sec-title">The Future is NeuralFocus</h2>
+        <p style="color: #ccc; line-height: 1.8; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+            Under the direction of <strong>Lucas Guzmán</strong>, we combine AI engineering with premium marketing to transform operational complexity into a global advantage.
         </p>
     </section>
 
     <footer>
-        <p>&copy; 2026 NeuralFocus AI. Lucas Guzmán.<br>Global Strategy & AI Development.</p>
+        <p>&copy; 2026 NeuralFocus AI. Lucas Guzmán.<br>AI Development & Global Strategy Agency.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particles-js", { "particles": { "number": { "value": 40 }, "color": { "value": "#bc13fe" }, "line_linked": { "enable": true, "color": "#00f2ff", "opacity": 0.2 }, "move": { "enable": true, "speed": 1 } } });
+        particlesJS("particles-js", { "particles": { "number": { "value": 45 }, "color": { "value": "#bc13fe" }, "line_linked": { "enable": true, "color": "#00f2ff", "opacity": 0.2 }, "move": { "enable": true, "speed": 1.2 } } });
         
         function activarVoz() {
-            const t = new SpeechSynthesisUtterance("Welcome to NeuralFocus AI. I am your digital assistant. We are ready to automate your business and scale your sales 24/7. How can we help you today?");
+            const t = new SpeechSynthesisUtterance("Welcome to NeuralFocus AI. We specialize in International SEO, High-Performance Web Development, and AI Automation. We are ready to lead your digital transformation. How can we help you today?");
             t.lang = 'en-US'; t.rate = 0.9;
             window.speechSynthesis.speak(t);
         }
