@@ -14,10 +14,12 @@
             --cyan: #00f2ff; 
             --purple: #bc13fe; 
             --dark: #000000; 
-            --glass: rgba(255, 255, 255, 0.03); 
-            --border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(255, 255, 255, 0.02); 
+            --border: rgba(255, 255, 255, 0.08);
+            --text-muted: #888888;
         }
 
+        /* RESET & BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
         body { 
@@ -25,220 +27,231 @@
             color: #ffffff; 
             font-family: 'Inter', sans-serif; 
             overflow-x: hidden; 
-            line-height: 1.6;
-            text-align: center; /* Centrado base para todo el documento */
+            line-height: 1.8;
+            text-align: center;
         }
 
-        /* BACKGROUND ELEMENTS */
-        .bg-glow {
+        /* BACKGROUND GLOW */
+        .bg-vignette {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(188, 19, 254, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.03) 0%, transparent 80%);
             z-index: -1; pointer-events: none;
         }
 
-        /* LANGUAGE TOGGLE */
+        /* LANGUAGE SWITCH */
         .lang-switch {
-            position: fixed; top: 20px; right: 20px; z-index: 1000;
-            background: var(--glass); border: 1px solid var(--border);
-            padding: 8px 16px; border-radius: 2px; cursor: pointer;
-            backdrop-filter: blur(10px); font-family: 'Orbitron'; font-size: 0.65rem;
-            transition: 0.3s; letter-spacing: 1px;
+            position: fixed; top: 30px; right: 30px; z-index: 1000;
+            background: var(--dark); border: 1px solid var(--border);
+            padding: 10px 20px; border-radius: 2px; cursor: pointer;
+            backdrop-filter: blur(15px); font-family: 'Orbitron'; font-size: 0.7rem;
+            transition: 0.4s; letter-spacing: 2px; color: var(--cyan);
         }
-        .lang-switch:hover { border-color: var(--cyan); box-shadow: 0 0 15px var(--cyan); }
+        .lang-switch:hover { background: var(--cyan); color: #000; border-color: var(--cyan); box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
 
         /* HERO SECTION */
         #hero { 
             min-height: 100vh; display: flex; flex-direction: column; 
             align-items: center; justify-content: center; 
-            padding: 60px 20px; position: relative;
+            padding: 80px 20px;
         }
 
-        .hero-content { max-width: 850px; width: 100%; z-index: 10; }
+        .hero-content { max-width: 900px; width: 100%; }
         
         h1 { 
-            font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 8vw, 5rem); 
-            font-weight: 900; margin-bottom: 20px; letter-spacing: -2px;
-            background: linear-gradient(180deg, #fff 0%, #666 100%);
+            font-family: 'Orbitron', sans-serif; font-size: clamp(3rem, 10vw, 6rem); 
+            font-weight: 900; margin-bottom: 30px; letter-spacing: -3px; line-height: 1;
+            background: linear-gradient(180deg, #ffffff 30%, rgba(255,255,255,0.4) 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         
         .hero-desc { 
-            margin-bottom: 45px; color: #888; font-size: clamp(1rem, 2vw, 1.2rem); 
-            max-width: 600px; margin-inline: auto; font-weight: 300;
+            margin-bottom: 50px; color: var(--text-muted); font-size: clamp(1.1rem, 2.5vw, 1.4rem); 
+            max-width: 750px; margin-inline: auto; font-weight: 300; letter-spacing: 0.5px;
         }
 
-        /* ACTION BUTTONS */
-        .btn-group { 
-            display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; 
+        /* BUTTONS */
+        .btn-container { 
+            display: flex; flex-direction: column; align-items: center; gap: 25px; width: 100%; 
         }
 
-        .btn-main { 
-            width: 100%; max-width: 380px; padding: 20px; border-radius: 4px;
+        .btn-action { 
+            width: 100%; max-width: 400px; padding: 22px; border-radius: 4px;
             text-decoration: none; font-family: 'Orbitron'; font-weight: 700;
-            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;
-            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            display: flex; align-items: center; justify-content: center; gap: 12px;
+            font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px;
+            transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+            display: flex; align-items: center; justify-content: center; gap: 15px;
         }
 
         .btn-meeting { background: transparent; color: var(--cyan); border: 1px solid var(--cyan); }
-        .btn-meeting:hover { background: var(--cyan); color: #000; box-shadow: 0 0 30px var(--cyan); }
+        .btn-meeting:hover { background: var(--cyan); color: #000; box-shadow: 0 0 40px rgba(0, 242, 255, 0.5); transform: translateY(-3px); }
 
         .btn-whatsapp { background: transparent; color: #fff; border: 1px solid var(--border); }
-        .btn-whatsapp:hover { border-color: var(--purple); box-shadow: 0 0 30px var(--purple); }
+        .btn-whatsapp:hover { border-color: var(--purple); color: var(--purple); box-shadow: 0 0 40px rgba(188, 19, 254, 0.3); transform: translateY(-3px); }
+
+        /* DIVIDER */
+        .media-bar { padding: 60px 20px; color: #222; font-family: 'Orbitron'; font-weight: 900; letter-spacing: 5px; font-size: 1.2rem; border-top: 1px solid var(--border); }
 
         /* SERVICES SECTION */
-        .section-padding { padding: 100px 20px; }
-        .container { max-width: 1100px; margin: 0 auto; }
+        .section-padding { padding: 120px 20px; }
+        .container { max-width: 1300px; margin: 0 auto; }
         
-        .section-title { 
-            font-family: 'Orbitron'; font-size: 1.8rem; margin-bottom: 60px; 
-            letter-spacing: 4px; color: #fff; 
-        }
+        .section-header { margin-bottom: 80px; }
+        .section-header h2 { font-family: 'Orbitron'; font-size: 2.5rem; letter-spacing: 8px; color: #fff; text-transform: uppercase; }
+        .section-header p { color: var(--cyan); font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 4px; margin-top: 10px; }
 
         .grid-services { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 40px; 
         }
         
         .card { 
             background: var(--glass); border: 1px solid var(--border); 
-            padding: 40px 30px; border-radius: 8px; transition: 0.4s;
-            display: flex; flex-direction: column; align-items: center;
+            padding: 50px 40px; border-radius: 4px; transition: 0.6s;
+            display: flex; flex-direction: column; align-items: center; backdrop-filter: blur(5px);
         }
-        .card:hover { border-color: var(--cyan); transform: translateY(-5px); background: rgba(255,255,255,0.05); }
+        .card:hover { border-color: var(--cyan); background: rgba(255,255,255,0.04); transform: scale(1.02); }
         
-        .card img { 
-            width: 100%; height: 180px; object-fit: cover; border-radius: 4px;
-            margin-bottom: 25px; filter: grayscale(1); transition: 0.5s;
+        .card-img { 
+            width: 100%; height: 250px; object-fit: cover; border-radius: 2px;
+            margin-bottom: 35px; filter: grayscale(1) brightness(0.7); transition: 0.6s;
         }
-        .card:hover img { filter: grayscale(0); }
+        .card:hover .card-img { filter: grayscale(0) brightness(1); }
 
-        .card i { font-size: 2rem; color: var(--cyan); margin-bottom: 20px; }
-        .card h3 { font-family: 'Orbitron'; color: #fff; margin-bottom: 15px; font-size: 1.1rem; }
-        .card p { color: #777; font-size: 0.9rem; font-weight: 300; }
+        .card i { font-size: 2.5rem; color: var(--cyan); margin-bottom: 25px; }
+        .card h3 { font-family: 'Orbitron'; color: #fff; margin-bottom: 20px; font-size: 1.4rem; letter-spacing: 2px; }
+        .card p { color: #aaa; font-size: 1rem; font-weight: 300; text-align: justify; }
 
-        /* FINAL CTA */
-        .audit-container { 
-            border-top: 1px solid var(--border); padding-top: 80px; margin-top: 50px;
-        }
-        .audit-card { 
-            background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
-            padding: 60px 20px; border-radius: 12px; border: 1px solid var(--border);
-        }
+        /* AUDIT SECTION */
+        .audit-section { background: #050505; border-top: 1px solid var(--border); padding: 100px 20px; }
+        .audit-content { max-width: 800px; margin: 0 auto; }
+        .audit-content h2 { font-family: 'Orbitron'; font-size: 2.2rem; margin-bottom: 25px; }
+        .audit-content p { color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem; }
+
         .btn-audit { 
-            display: inline-flex; align-items: center; gap: 10px;
-            background: #fff; color: #000; padding: 18px 40px; border-radius: 2px;
+            display: inline-flex; align-items: center; gap: 15px;
+            background: #ffffff; color: #000000; padding: 22px 50px; border-radius: 2px;
             font-family: 'Orbitron'; font-weight: 900; text-decoration: none;
-            margin-top: 30px; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 2px; transition: 0.4s;
         }
-        .btn-audit:hover { background: var(--cyan); transform: scale(1.05); }
+        .btn-audit:hover { background: var(--cyan); box-shadow: 0 0 50px var(--cyan); transform: scale(1.05); }
 
-        footer { padding: 50px 20px; border-top: 1px solid var(--border); color: #333; font-size: 0.7rem; font-family: 'Orbitron'; letter-spacing: 2px; }
+        footer { padding: 80px 20px; color: #222; font-size: 0.75rem; font-family: 'Orbitron'; letter-spacing: 3px; border-top: 1px solid var(--border); }
 
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
+            h1 { font-size: 3.5rem; }
             .grid-services { grid-template-columns: 1fr; }
+            .card { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"></div>
+    <div class="bg-vignette"></div>
 
     <div class="lang-switch" onclick="toggleLanguage()">
-        <i class="fas fa-code"></i> <span id="lang-label">TÜRKÇE (TR)</span>
+        <i class="fas fa-terminal"></i> <span id="lang-label">TÜRKÇE (TR)</span>
     </div>
 
     <header id="hero">
         <div class="hero-content">
             <h1 data-i18n="hero-title">NEURALFOCUS AI</h1>
             <p class="hero-desc" data-i18n="hero-desc">
-                Elite strategic consultancy in Artificial Intelligence, Precision Marketing, and Cybersecurity. Led by <strong>Lucas Guzmán</strong>.
+                Definitive strategic intelligence for the digital era. We architect high-performance solutions in Artificial Intelligence and Global Marketing.
             </p>
             
-            <div class="btn-group">
-                <a href="mailto:menteglobalempresarial@gmail.com" class="btn-main btn-meeting">
-                    <i class="fas fa-envelope"></i> <span data-i18n="btn-meeting">Request a Meeting</span>
+            <div class="btn-container">
+                <a href="mailto:menteglobalempresarial@gmail.com" class="btn-action btn-meeting">
+                    <i class="fas fa-envelope-open-text"></i> <span data-i18n="btn-meeting">Request a Meeting</span>
                 </a>
                 
-                <a href="https://wa.me/5492246496971" class="btn-main btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> <span data-i18n="btn-wp">Direct WhatsApp</span>
+                <a href="https://wa.me/5492246496971" class="btn-action btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="btn-wp">Direct Executive Line</span>
                 </a>
             </div>
         </div>
     </header>
 
+    <div class="media-bar">
+        HABER7 // SABAH // SABAH GAZETESI // SABAH GAZETESI // SABAH
+    </div>
+
     <section class="section-padding container">
-        <h2 class="section-title" data-i18n="services-title">Strategic Divisions</h2>
-        <div class="grid-services">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="AI">
-                <i class="fas fa-brain"></i>
-                <h3 data-i18n="ai-h">AI Strategy</h3>
-                <p data-i18n="ai-p">Advanced cognitive frameworks designed to eliminate operational friction and accelerate global scaling.</p>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="MKT">
-                <i class="fas fa-chart-bar"></i>
-                <h3 data-i18n="mkt-h">Precision Marketing</h3>
-                <p data-i18n="mkt-p">Data-driven penetration strategies and high-conversion B2B digital ecosystems for industry leaders.</p>
-            </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="CYBER">
-                <i class="fas fa-shield-alt"></i>
-                <h3 data-i18n="cyb-h">Cybersecurity</h3>
-                <p data-i18n="cyb-p">Enterprise-grade protection for digital assets and rigorous infrastructure risk assessments.</p>
-            </div>
+        <div class="section-header">
+            <h2 data-i18n="services-title">Strategic Divisions</h2>
+            <p data-i18n="services-sub">PREMIUM ADVISORY SERVICES</p>
         </div>
 
-        <div class="audit-container">
-            <div class="audit-card">
-                <h2 data-i18n="free-h" style="font-family: 'Orbitron';">Complimentary Audit</h2>
-                <p data-i18n="free-p" style="color: #666; margin-top: 10px;">Claim a 1-on-1 diagnostic session. Zero cost, absolute strategic value.</p>
-                <a href="mailto:menteglobalempresarial@gmail.com" class="btn-audit">
-                    <i class="fas fa-bolt"></i> <span data-i18n="free-btn">Start Free Audit</span>
-                </a>
+        <div class="grid-services">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="card-img" alt="AI">
+                <i class="fas fa-brain"></i>
+                <h3 data-i18n="ai-h">AI Strategy & Deployment</h3>
+                <p data-i18n="ai-p">We engineer bespoke cognitive architectures designed to automate complex decision-making processes. Our approach focuses on eliminating operational friction, optimizing resource allocation, and implementing self-evolving systems that ensure your enterprise stays ahead of the technological curve.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="card-img" alt="MKT">
+                <i class="fas fa-chart-line"></i>
+                <h3 data-i18n="mkt-h">Precision Growth Marketing</h3>
+                <p data-i18n="mkt-p">Our marketing methodology is rooted in deep data analytics and behavioral science. We build high-conversion digital ecosystems specifically tailored for B2B industrial sectors, ensuring aggressive market penetration and a measurable, high-impact return on investment for global brands.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="card-img" alt="CYBER">
+                <i class="fas fa-shield-halved"></i>
+                <h3 data-i18n="cyb-h">Cyber-Defense Architecture</h3>
+                <p data-i18n="cyb-p">In an era of sophisticated digital threats, we provide military-grade cybersecurity consulting. From rigorous vulnerability assessments to the deployment of zero-trust infrastructures, we protect your most valuable digital assets and intellectual property with relentless precision.</p>
             </div>
         </div>
     </section>
 
+    <section class="audit-section">
+        <div class="audit-content">
+            <h2 data-i18n="free-h">Strategic Diagnostic Session</h2>
+            <p data-i18n="free-p">Unlock a high-level 1-on-1 audit with Lucas Guzmán. We will analyze your current infrastructure and define a roadmap for immediate digital transformation. Zero cost for qualified organizations.</p>
+            <a href="mailto:menteglobalempresarial@gmail.com" class="btn-audit">
+                <i class="fas fa-bolt"></i> <span data-i18n="free-btn">Initialize Audit</span>
+            </a>
+        </div>
+    </section>
+
     <footer>
-        <p>NEURALFOCUS AI // ARGENTINA • TÜRKİYE // 2026</p>
+        NEURALFOCUS AI // GLOBAL OPERATIONS // ARGENTINA • TÜRKİYE // EST. 2026
     </footer>
 
     <script>
         const translations = {
             en: {
                 "hero-title": "NEURALFOCUS AI",
-                "hero-desc": "Elite strategic consultancy in Artificial Intelligence, Precision Marketing, and Cybersecurity. Led by Lucas Guzmán.",
+                "hero-desc": "Definitive strategic intelligence for the digital era. We architect high-performance solutions in Artificial Intelligence and Global Marketing.",
                 "btn-meeting": "Request a Meeting",
-                "btn-wp": "Direct WhatsApp",
+                "btn-wp": "Direct Executive Line",
                 "services-title": "Strategic Divisions",
-                "ai-h": "AI Strategy",
-                "ai-p": "Advanced cognitive frameworks designed to eliminate operational friction and accelerate global scaling.",
-                "mkt-h": "Precision Marketing",
-                "mkt-p": "Data-driven penetration strategies and high-conversion B2B digital ecosystems.",
-                "cyb-h": "Cybersecurity",
-                "cyb-p": "Enterprise-grade protection for digital assets and infrastructure risk assessments.",
-                "free-h": "Complimentary Audit",
-                "free-p": "Claim a 1-on-1 diagnostic session. Zero cost, absolute strategic value.",
-                "free-btn": "Start Free Audit",
+                "services-sub": "PREMIUM ADVISORY SERVICES",
+                "ai-h": "AI Strategy & Deployment",
+                "ai-p": "We engineer bespoke cognitive architectures designed to automate complex decision-making processes. Our approach focuses on eliminating operational friction, optimizing resource allocation, and implementing self-evolving systems that ensure your enterprise stays ahead of the technological curve.",
+                "mkt-h": "Precision Growth Marketing",
+                "mkt-p": "Our marketing methodology is rooted in deep data analytics and behavioral science. We build high-conversion digital ecosystems specifically tailored for B2B industrial sectors, ensuring aggressive market penetration and a measurable return on investment.",
+                "cyb-h": "Cyber-Defense Architecture",
+                "cyb-p": "In an era of sophisticated digital threats, we provide military-grade cybersecurity consulting. From rigorous vulnerability assessments to the deployment of zero-trust infrastructures, we protect your most valuable digital assets with precision.",
+                "free-h": "Strategic Diagnostic Session",
+                "free-p": "Unlock a high-level 1-on-1 audit with Lucas Guzmán. We will analyze your current infrastructure and define a roadmap for immediate digital transformation. Zero cost for qualified organizations.",
+                "free-btn": "Initialize Audit",
                 "label": "TÜRKÇE (TR)"
             },
             tr: {
                 "hero-title": "NEURALFOCUS AI",
-                "hero-desc": "Yapay Zeka, Hassas Pazarlama ve Siber Güvenlikte seçkin stratejik danışmanlık. Lucas Guzmán tarafından yönetilmektedir.",
+                "hero-desc": "Dijital çağ için kesin stratejik istihbarat. Yapay Zeka ve Küresel Pazarlamada yüksek performanslı çözümler tasarlıyoruz.",
                 "btn-meeting": "Toplantı Talep Et",
-                "btn-wp": "Doğrudan WhatsApp",
+                "btn-wp": "Doğrudan Yönetici Hattı",
                 "services-title": "Stratejik Bölümler",
-                "ai-h": "YZ Stratejisi",
-                "ai-p": "Operasyonel sürtünmeyi ortadan kaldırmak ve küresel ölçeklendirmeyi hızlandırmak için tasarlanmış bilişsel çerçeveler.",
-                "mkt-h": "Hassas Pazarlama",
-                "mkt-p": "Veriye dayalı penetrasyon stratejileri ve yüksek dönüşümlü B2B dijital ekosistemler.",
-                "cyb-h": "Siber Güvenlik",
-                "cyb-p": "Dijital varlıklar için kurumsal düzeyde koruma ve altyapı risk değerlendirmeleri.",
-                "free-h": "Ücretsiz Denetim",
-                "free-p": "Bire bir teşhis oturumu talep edin. Sıfır maliyet, mutlak stratejik değer.",
-                "free-btn": "Ücretsiz Denetimi Başlat",
+                "services-sub": "PREMIUM DANIŞMANLIK HİZMETLERİ",
+                "ai-h": "YZ Stratejisi ve Dağıtımı",
+                "ai-p": "Karmaşık karar verme süreçlerini otomatikleştirmek için tasarlanmış özel bilişsel mimariler tasarlıyoruz. Yaklaşımımız, operasyonel sürtünmeyi ortadan kaldırmaya, kaynak tahsisini optimize etmeye ve işletmenizin teknolojik eğrinin önünde kalmasını sağlayan kendi kendine gelişen sistemler kurmaya odaklanır.",
+                "mkt-h": "Hassas Büyüme Pazarlaması",
+                "mkt-p": "Pazarlama metodolojimiz derin veri analitiği ve davranış bilimlerine dayanmaktadır. Sanayi sektörleri için özel olarak tasarlanmış yüksek dönüşümlü dijital ekosistemler oluşturarak agresif pazar penetrasyonu ve ölçülebilir, yüksek etkili bir yatırım getirisi sağlıyoruz.",
+                "cyb-h": "Siber Savunma Mimarisi",
+                "cyb-p": "Sofistike dijital tehditler çağında, askeri düzeyde siber güvenlik danışmanlığı sunuyoruz. Titiz güvenlik açığı değerlendirmelerinden sıfır güven altyapılarının dağıtımına kadar, en değerli dijital varlıklarınızı ve fikri mülkiyetinizi amansız bir hassasiyetle koruyoruz.",
+                "free-h": "Stratejik Teşhis Oturumu",
+                "free-p": "Lucas Guzmán ile üst düzey 1-e-1 denetimin kilidini açın. Mevcut altyapınızı analiz edeceğiz ve anında dijital dönüşüm için bir yol haritası belirleyeceğiz. Nitelikli kuruluşlar için sıfır maliyet.",
+                "free-btn": "Denetimi Başlat",
                 "label": "ENGLISH (EN)"
             }
         };
