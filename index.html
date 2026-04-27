@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>NeuralFocus AI | Consultoría Estratégica</title>
-    <meta name="description" content="Ayudo a negocios de todos los tamaños a crecer usando Inteligencia Artificial, Marketing y Seguridad Digital.">
+    <title>NeuralFocus AI | Consultoría para Negocios y Empresas</title>
+    <meta name="description" content="Lucas Guzmán - Ayudo a negocios, emprendedores y empresas a crecer con IA, Marketing y Seguridad Digital.">
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,14 +15,16 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--dark); color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; line-height: 1.6; }
 
-        /* --- TRADUCTOR --- */
+        /* --- BOTÓN TRADUCCIÓN --- */
         .lang-switch {
             position: fixed; bottom: 25px; right: 25px; z-index: 1000;
-            background: rgba(0, 242, 255, 0.1); border: 1px solid var(--cyan);
-            padding: 10px 18px; border-radius: 50px; cursor: pointer;
-            backdrop-filter: blur(10px); display: flex; align-items: center; gap: 8px;
-            font-family: 'Orbitron'; font-size: 0.65rem; color: #fff; box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            background: rgba(0, 242, 255, 0.15); border: 1px solid var(--cyan);
+            padding: 12px 20px; border-radius: 50px; cursor: pointer;
+            backdrop-filter: blur(10px); display: flex; align-items: center; gap: 10px;
+            font-family: 'Orbitron'; font-size: 0.7rem; color: #fff; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+            transition: 0.3s;
         }
+        .lang-switch:hover { transform: scale(1.05); background: rgba(0, 242, 255, 0.25); }
 
         /* --- HERO --- */
         #hero { 
@@ -31,47 +33,54 @@
         }
         #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.3; }
 
-        .hero-content { position: relative; z-index: 10; text-align: center; width: 100%; max-width: 900px; }
-        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 8vw, 3.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content { position: relative; z-index: 10; text-align: center; width: 100%; max-width: 850px; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.2rem, 8vw, 3.8rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; background: linear-gradient(180deg, #fff 40%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; }
         
+        .hero-desc { margin-bottom: 35px; color: #ccc; font-size: clamp(1rem, 4vw, 1.2rem); max-width: 700px; margin-inline: auto; }
+
         /* --- BOTONES --- */
-        .btn-section { width: 100%; max-width: 350px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-        .btn { width: 100%; padding: 16px; border-radius: 12px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-primary { background: var(--cyan); color: #000; }
+        .btn-section { width: 100%; max-width: 380px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+        .btn { width: 100%; padding: 18px; border-radius: 15px; text-decoration: none; font-family: 'Orbitron'; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 12px; transition: 0.3s; border: none; cursor: pointer; }
+        .btn-primary { background: var(--cyan); color: #000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3); }
         .btn-skype { background: transparent; color: #fff; border: 1px solid var(--skype); }
         .btn-outline { background: transparent; color: #fff; border: 1px solid var(--purple); }
+        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
         
-        .media-bar { background: rgba(255,255,255,0.02); padding: 25px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; opacity: 0.4; }
-        .media-bar span { font-family: 'Orbitron'; font-weight: 900; font-size: 0.9rem; }
+        .media-bar { background: rgba(255,255,255,0.02); padding: 30px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; opacity: 0.4; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .media-bar span { font-family: 'Orbitron'; font-weight: 900; font-size: 1rem; }
 
         /* --- SECCIONES --- */
-        section { padding: 80px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        section { padding: 100px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .container { max-width: 1200px; margin: 0 auto; }
-        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 30px; font-size: 1.8rem; text-transform: uppercase; }
+        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 50px; font-size: 2rem; text-transform: uppercase; letter-spacing: 2px; }
         
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--glass); border-radius: 24px; padding: 30px; border: 1px solid rgba(255,255,255,0.05); }
-        .card i { font-size: 2rem; color: var(--purple); margin-bottom: 20px; display: block; }
-        .card h3 { font-family: 'Orbitron'; margin-bottom: 15px; font-size: 1.2rem; }
+        .card { background: var(--glass); border-radius: 28px; padding: 40px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .card:hover { border-color: var(--purple); background: rgba(255, 255, 255, 0.08); }
+        .card i { font-size: 2.5rem; color: var(--purple); margin-bottom: 25px; display: block; }
+        .card h3 { font-family: 'Orbitron'; margin-bottom: 15px; font-size: 1.3rem; color: var(--cyan); }
+        .card p { color: #bbb; font-size: 0.95rem; }
 
-        /* --- TURKEY BANNER --- */
-        .turkey-banner { background: linear-gradient(135deg, #c8102e 0%, #000 100%); border-radius: 30px; padding: 50px 30px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
+        /* --- BANNER FINAL --- */
+        .turkey-banner { background: linear-gradient(135deg, #c8102e 0%, #000 100%); border-radius: 35px; padding: 60px 40px; border: 1px solid rgba(255,255,255,0.1); text-align: center; position: relative; overflow: hidden; }
+        .turkey-banner h2 { font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 20px; }
 
-        footer { padding: 40px 20px; text-align: center; font-size: 0.8rem; color: #555; }
+        footer { padding: 60px 20px; text-align: center; font-size: 0.9rem; color: #666; background: #010101; }
+        strong { color: #fff; }
     </style>
 </head>
 <body>
 
     <div class="lang-switch" onclick="toggleLanguage()">
-        <i class="fas fa-language"></i>
-        <span id="lang-label">CAMBIAR A TURCO (TR)</span>
+        <i class="fas fa-globe"></i>
+        <span id="lang-label">TRADUCIR AL TURCO (TR)</span>
     </div>
 
     <header id="hero">
         <div id="particles-js"></div>
         <div class="hero-content">
             <h1 data-i18n="h-title">NEURALFOCUS AI</h1>
-            <p style="margin-bottom: 30px; color: #ccc; font-size: 1.1rem;" data-i18n="h-desc">Hola, soy Lucas Guzmán. Ayudo a emprendedores, pequeños negocios y grandes empresas a usar la tecnología para crecer sin complicaciones.</p>
+            <p class="hero-desc" data-i18n="h-desc">Hola, soy <strong>Lucas Guzmán</strong>. Ayudo a emprendedores, pequeños negocios y grandes empresas a usar la tecnología para crecer sin complicaciones.</p>
             
             <div class="btn-section">
                 <a href="skype:TU_USUARIO_SKYPE?call" class="btn btn-skype"><i class="fas fa-video"></i> <span data-i18n="btn-skype">Invitación a Videollamada</span></a>
@@ -90,47 +99,47 @@
             <div class="card">
                 <i class="fas fa-robot"></i>
                 <h3 data-i18n="p1-h">Inteligencia Artificial</h3>
-                <p data-i18n="p1-p">Te enseño a usar herramientas modernas para que tu negocio trabaje por ti. Ahorra tiempo en tareas aburridas y atiende a tus clientes más rápido, sin importar si tienes un café o una fábrica.</p>
+                <p data-i18n="p1-p">Te enseño a usar herramientas modernas para que tu negocio trabaje por ti. Ahorra tiempo en tareas aburridas y atiende a tus clientes más rápido, sin importar si tienes un café o una gran fábrica.</p>
             </div>
             <div class="card">
-                <i class="fas fa-store"></i>
+                <i class="fas fa-bullhorn"></i>
                 <h3 data-i18n="p2-h">Marketing Digital</h3>
                 <p data-i18n="p2-p">Hacemos que la gente te encuentre. Si eres un emprendedor local o una gran empresa, aplicamos los métodos necesarios para que tus productos o servicios lleguen a más personas y vendas más.</p>
             </div>
             <div class="card">
-                <i class="fas fa-user-shield"></i>
+                <i class="fas fa-shield-alt"></i>
                 <h3 data-i18n="p3-h">Seguridad Digital</h3>
                 <p data-i18n="p3-p">Protegemos tu información y la de tus clientes. Analizamos qué necesita tu negocio para estar seguro frente a ataques o estafas en internet, manteniendo tu trabajo siempre a salvo.</p>
             </div>
         </div>
     </section>
 
-    <section id="turkey" class="container">
+    <section id="contact" class="container">
         <div class="turkey-banner">
             <h2 data-i18n="tr-h">Beneficios de trabajar conmigo</h2>
-            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #eee;" data-i18n="tr-p">Ofrezco una consultoría simple y directa. Mi objetivo es que entiendas cada paso y veas resultados reales en tu negocio, ya sea local o internacional.</p>
+            <p style="margin-bottom: 35px; font-size: 1.1rem; color: #eee; max-width: 750px; margin-inline: auto;" data-i18n="tr-p">Ofrezco una consultoría simple y directa. Mi objetivo es que entiendas cada paso y veas resultados reales en tu negocio, ya sea local o internacional.</p>
             <a href="mailto:menteglobalempresarial@gmail.com" class="btn btn-primary" style="max-width: 350px; margin: 0 auto;" data-i18n="btn-claim">Solicitar más información</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 NeuralFocus AI. Lucas Guzmán.</p>
-        <p data-i18n="foot">Soluciones fáciles para negocios reales.</p>
+        <p>&copy; 2026 <strong>NeuralFocus AI</strong>. Lucas Guzmán.</p>
+        <p style="margin-top: 10px;" data-i18n="foot">Soluciones fáciles para negocios reales.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particles-js", { "particles": { "number": { "value": 40 }, "color": { "value": "#bc13fe" }, "line_linked": { "enable": true, "color": "#00f2ff", "opacity": 0.2 }, "move": { "enable": true, "speed": 1.5 } } });
+        particlesJS("particles-js", { "particles": { "number": { "value": 45 }, "color": { "value": "#bc13fe" }, "line_linked": { "enable": true, "color": "#00f2ff", "opacity": 0.2 }, "move": { "enable": true, "speed": 1.5 } } });
 
         const translations = {
-            en: {
+            es: {
                 "h-title": "NEURALFOCUS AI",
                 "h-desc": "Hola, soy Lucas Guzmán. Ayudo a emprendedores, pequeños negocios y grandes empresas a usar la tecnología para crecer sin complicaciones.",
                 "btn-skype": "Invitación a Videollamada",
                 "btn-ceo": "WhatsApp de contacto directo",
                 "pillars-t": "¿Cómo puedo ayudarte?",
                 "p1-h": "Inteligencia Artificial",
-                "p1-p": "Te enseño a usar herramientas modernas para que tu negocio trabaje por ti. Ahorra tiempo en tareas aburridas y atiende a tus clientes más rápido, sin importar si tienes un café o una fábrica.",
+                "p1-p": "Te enseño a usar herramientas modernas para que tu negocio trabaje por ti. Ahorra tiempo en tareas aburridas y atiende a tus clientes más rápido, sin importar si tienes un café o una gran fábrica.",
                 "p2-h": "Marketing Digital",
                 "p2-p": "Hacemos que la gente te encuentre. Si eres un emprendedor local o una gran empresa, aplicamos los métodos necesarios para que tus productos o servicios lleguen a más personas y vendas más.",
                 "p3-h": "Seguridad Digital",
@@ -138,35 +147,37 @@
                 "tr-h": "Beneficios de trabajar conmigo",
                 "tr-p": "Ofrezco una consultoría simple y directa. Mi objetivo es que entiendas cada paso y veas resultados reales en tu negocio, ya sea local o internacional.",
                 "btn-claim": "Solicitar más información",
-                "foot": "Soluciones fáciles para negocios reales."
+                "foot": "Soluciones fáciles para negocios reales.",
+                "label": "TRADUCIR AL TURCO (TR)"
             },
             tr: {
                 "h-title": "NEURALFOCUS AI",
                 "h-desc": "Merhaba, ben Lucas Guzmán. Girişimcilere, küçük işletmelere ve büyük şirketlere teknolojiyi kullanarak karmaşıklık olmadan büyümeleri için yardımcı oluyorum.",
                 "btn-skype": "Görüntülü Görüşme Daveti",
-                "btn-ceo": "Doğrudan İletişim WhatsApp'ı",
+                "btn-ceo": "Doğrudan İletişim WhatsApp Hattı",
                 "pillars-t": "Size Nasıl Yardımcı Olabilirim?",
                 "p1-h": "Yapay Zeka",
-                "p1-p": "İşletmenizin sizin yerinize çalışması için modern araçları kullanmayı öğretiyorum. İster bir kafe ister bir fabrika sahibi olun, sıkıcı görevlerde zaman kazanın ve müşterilerinize daha hızlı hizmet verin.",
+                "p1-p": "İşletmenizin sizin yerinize çalışması için modern araçları kullanmayı öğretiyorum. İster bir kafe ister büyük bir fabrika olsun, sıkıcı işlerde zaman kazanın ve müşterilerinize daha hızlı hizmet verin.",
                 "p2-h": "Dijital Pazarlama",
-                "p2-p": "İnsanların sizi bulmasını sağlıyoruz. İster yerel bir girişimci ister büyük bir şirket olun, ürün veya hizmetlerinizin daha fazla kişiye ulaşması ve daha fazla satış yapmanız için gerekli yöntemleri uyguluyoruz.",
+                "p2-p": "İnsanların sizi bulmasını sağlıyoruz. İster yerel bir girişimci ister büyük bir şirket olun, satışlarınızı artırmak için gerekli yöntemleri uyguluyoruz.",
                 "p3-h": "Dijital Güvenlik",
-                "p3-p": "Sizin ve müşterilerinizin bilgilerini koruyoruz. İşletmenizin internetteki saldırılara veya dolandırıcılıklara karşı güvende olması için neye ihtiyacı olduğunu analiz ediyor, işinizi her zaman güvende tutuyoruz.",
-                "tr-h": "Benimle Çalışmanın Faydaları",
+                "p3-p": "Sizin ve müşterilerinizin bilgilerini koruyoruz. İşletmenizin internetteki saldırılara karşı güvende olması için neye ihtiyacı olduğunu analiz ediyor, işinizi koruma altına alıyoruz.",
+                "tr-h": "Benimle Çalışmanın Avantajları",
                 "tr-p": "Basit ve doğrudan danışmanlık sunuyorum. Amacım, her adımı anlamanız ve ister yerel ister uluslararası olsun, işletmenizde gerçek sonuçlar görmenizdir.",
-                "btn-claim": "Daha Fazla Bilgi İste",
-                "foot": "Gerçek işletmeler için kolay çözümler."
+                "btn-claim": "Daha Fazla Bilgi Al",
+                "foot": "Gerçek işletmeler için kolay çözümler.",
+                "label": "İSPANYOLCAYA DÖN (ES)"
             }
         };
 
-        let currentLang = 'en';
+        let currentLang = 'es';
         function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'tr' : 'en';
+            currentLang = currentLang === 'es' ? 'tr' : 'es';
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 el.textContent = translations[currentLang][key];
             });
-            document.getElementById('lang-label').textContent = currentLang === 'en' ? 'CAMBIAR A TURCO (TR)' : 'İSPANYOLCAYA DEĞİŞTİR (ES)';
+            document.getElementById('lang-label').textContent = translations[currentLang]["label"];
         }
     </script>
 </body>
