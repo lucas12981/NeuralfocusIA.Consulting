@@ -1,205 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>NeuralFocus AI | Calendly Fixed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>NeuralFocus AI | Elite Strategic Consultancy</title>
+    <meta name="description" content="Pure strategic consulting in Artificial Intelligence, Digital Marketing, and Cybersecurity Architecture. Directed by Lucas Guzmán.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { 
+            --cyan: #00f2ff; 
+            --purple: #bc13fe; 
+            --dark: #050505; 
+            --glass: rgba(20, 20, 20, 0.6); 
+        }
 
-<style>
-:root {
-    --cyan: #00f2ff;
-    --purple: #bc13fe;
-    --dark: #050505;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--dark); color: #e0e0e0; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; line-height: 1.7; perspective: 1000px; }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* LANG SWITCH */
+        .lang-switch {
+            position: fixed; bottom: 30px; right: 30px; z-index: 1000;
+            background: rgba(0, 0, 0, 0.85); border: 1px solid var(--cyan);
+            padding: 12px 24px; border-radius: 50px; cursor: pointer;
+            backdrop-filter: blur(20px); display: flex; align-items: center; gap: 10px;
+            font-family: 'Orbitron'; font-size: 0.75rem; color: #fff;
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.2); transition: all 0.4s ease;
+            transform-style: preserve-3d;
+        }
+        .lang-switch:hover { transform: translateY(-5px) scale(1.05) translateZ(20px); box-shadow: 0 0 40px rgba(0, 242, 255, 0.6); background: rgba(0, 242, 255, 0.1); }
 
-body {
-    background: var(--dark);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-}
+        /* HERO */
+        #hero { 
+            min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            position: relative; background: radial-gradient(circle at center, #111 0%, #000 100%); overflow: hidden; padding: 80px 20px;
+            transform-style: preserve-3d;
+        }
+        #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.5; }
 
-#hero {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
-    background: radial-gradient(circle at center, #111 0%, #000 100%);
-}
+        .hero-content { position: relative; z-index: 10; text-align: center; width: 100%; max-width: 900px; transform: translateZ(50px); animation: float3D 6s ease-in-out infinite; }
+        
+        @keyframes float3D {
+            0%, 100% { transform: translateY(0) translateZ(50px); }
+            50% { transform: translateY(-15px) translateZ(80px); }
+        }
 
-.hero-content {
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
-}
+        h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 8vw, 4.8rem); font-weight: 900; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; background: linear-gradient(180deg, #ffffff 20%, #666666 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; text-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+        
+        .hero-desc { margin-bottom: 40px; color: #b0b0b0; font-size: clamp(1.1rem, 3vw, 1.25rem); font-weight: 300; max-width: 750px; margin-inline: auto; transform: translateZ(30px); }
+        .hero-desc strong { color: var(--cyan); font-weight: 600; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3); }
 
-h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2.5rem, 8vw, 4.8rem);
-    margin-bottom: 25px;
-}
+        /* BUTTONS - SEPARACIÓN AUMENTADA */
+        .btn-section { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 40px; /* Espacio masivo para evitar clics accidentales */
+            width: 100%; 
+            max-width: 400px; 
+            margin: 0 auto; 
+            transform: translateZ(40px); 
+        }
+        
+        .btn { 
+            width: 100%; 
+            padding: 20px 25px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-family: 'Orbitron'; 
+            font-weight: 700; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 12px; 
+            transition: all 0.3s ease; 
+            border: none; 
+            cursor: pointer; 
+            letter-spacing: 1px; 
+            transform-style: preserve-3d;
+            position: relative; /* Asegura área de clic limpia */
+        }
+        
+        .btn-meeting { background: rgba(0, 242, 255, 0.1); color: #fff; border: 1px solid var(--cyan); backdrop-filter: blur(5px); }
+        .btn-meeting:hover { background: var(--cyan); color: #000; box-shadow: 0 0 30px rgba(0, 242, 255, 0.6); transform: translateY(-3px) translateZ(20px); }
+        
+        .btn-whatsapp { background: transparent; color: #fff; border: 1px solid var(--purple); backdrop-filter: blur(5px); }
+        .btn-whatsapp:hover { background: var(--purple); color: #fff; box-shadow: 0 0 30px rgba(188, 19, 254, 0.6); transform: translateY(-3px) translateZ(20px); }
 
-.hero-desc {
-    max-width: 760px;
-    margin: 0 auto 40px auto;
-    color: #bdbdbd;
-    line-height: 1.8;
-}
+        .media-bar { background: #080808; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 5; }
+        .media-bar span { font-family: 'Orbitron'; font-weight: 900; font-size: 1.2rem; color: #333; transition: 0.4s; letter-spacing: 2px; }
+        .media-bar span:hover { color: var(--cyan); text-shadow: 0 0 20px var(--cyan); transform: scale(1.1); }
 
-.hero-desc strong {
-    color: var(--cyan);
-}
+        /* SERVICES */
+        section { padding: 100px 20px; position: relative; perspective: 1200px; }
+        .container { max-width: 1300px; margin: 0 auto; }
+        .sec-title { font-family: 'Orbitron'; color: var(--cyan); text-align: center; margin-bottom: 60px; font-size: clamp(2rem, 5vw, 2.5rem); text-transform: uppercase; letter-spacing: 3px; transform: translateZ(20px); }
+        
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; transform-style: preserve-3d; }
+        
+        .card { 
+            background: var(--glass); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); 
+            overflow: hidden; display: flex; flex-direction: column; backdrop-filter: blur(10px);
+            transform-style: preserve-3d; transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            will-change: transform;
+        }
+        .card:hover { border-color: var(--purple); box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(188, 19, 254, 0.2); }
+        
+        .card-img { width: 100%; height: 220px; object-fit: cover; filter: grayscale(100%) opacity(0.7); transition: 0.5s; border-bottom: 1px solid rgba(255,255,255,0.05); transform: translateZ(20px); }
+        .card:hover .card-img { filter: grayscale(0%) opacity(1); transform: scale(1.05) translateZ(40px); }
 
-/* FIXED BUTTON SECTION */
-.btn-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 100;
-}
+        .card-content { padding: 40px 30px; flex-grow: 1; transform: translateZ(50px); transition: transform 0.4s ease; }
+        .card:hover .card-content { transform: translateZ(70px); }
 
-.btn {
-    width: 100%;
-    padding: 18px 24px;
-    border-radius: 12px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    font-family: 'Orbitron';
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    position: relative;
-    z-index: 20;
-    transition: 0.3s ease;
-}
+        .card i { font-size: 2.2rem; color: var(--cyan); margin-bottom: 20px; text-shadow: 0 0 15px rgba(0, 242, 255, 0.4); display: inline-block; transform: translateZ(30px); }
+        .card h3 { font-family: 'Orbitron'; margin-bottom: 20px; font-size: 1.3rem; color: #fff; letter-spacing: 1px; transform: translateZ(25px); }
+        .card p { color: #999; font-size: 0.95rem; line-height: 1.8; margin-bottom: 15px; transform: translateZ(15px); }
 
-/* CALENDLY BUTTON PRIORITY */
-.btn-meeting {
-    background: rgba(0,242,255,0.08);
-    border: 1px solid var(--cyan);
-    color: #fff;
-    z-index: 999;
-}
+        .audit-banner { 
+            background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%); 
+            border-radius: 30px; padding: 80px 40px; text-align: center; 
+            border: 1px solid rgba(0, 242, 255, 0.2); position: relative; overflow: hidden;
+            transform-style: preserve-3d;
+        }
+        .audit-banner h2 { font-family: 'Orbitron'; color: #fff; margin-bottom: 20px; transform: translateZ(40px); }
+        .audit-banner p { color: #aaa; max-width: 700px; margin: 0 auto 40px auto; transform: translateZ(30px); }
+        
+        .btn-glow { 
+            background: var(--cyan); color: #000; padding: 22px 45px; border-radius: 50px; font-family: 'Orbitron'; font-weight: 900; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 15px; transition: 0.3s;
+            animation: pulse-glow 2s infinite; border: none; font-size: 1rem; cursor: pointer;
+            transform: translateZ(50px);
+        }
+        .btn-glow:hover { transform: scale(1.05) translateZ(60px); animation: none; box-shadow: 0 0 40px var(--cyan); }
 
-.btn-meeting:hover {
-    background: var(--cyan);
-    color: #000;
-}
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(0, 242, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0); }
+        }
 
-.btn-whatsapp {
-    background: transparent;
-    border: 1px solid var(--purple);
-    color: #fff;
-    z-index: 10;
-}
-
-.btn-whatsapp:hover {
-    background: var(--purple);
-}
-
-.audit-banner {
-    margin-top: 80px;
-    text-align: center;
-}
-
-.btn-glow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 20px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-family: 'Orbitron';
-    font-weight: 800;
-    background: var(--cyan);
-    color: #000;
-    margin-top: 20px;
-}
-
-footer {
-    padding: 40px 20px;
-    text-align: center;
-    color: #777;
-}
-</style>
+        footer { background: #000; padding: 50px 20px; text-align: center; color: #555; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.02); }
+    </style>
 </head>
 <body>
 
-<header id="hero">
-    <div class="hero-content">
-        <h1>NEURALFOCUS AI</h1>
-
-        <p class="hero-desc">
-            I am <strong>Lucas Guzmán</strong>. We provide pure strategic consulting in Artificial Intelligence, Precision Marketing, and Cybersecurity Architecture.
-            From high-growth startups to heavy industrial enterprises, we engineer the digital roadmap for global scaling.
-        </p>
-
-        <!-- FIXED BUTTONS -->
-        <div class="btn-section">
-
-            <!-- CALENDLY BUTTON -->
-            <a
-                href="https://calendly.com/menteglobalempresarial/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-meeting"
-            >
-                <i class="fas fa-calendar-alt"></i>
-                Book Your Free Strategy Call
-            </a>
-
-            <!-- WHATSAPP BUTTON -->
-            <a
-                href="https://wa.me/5492246496971"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-whatsapp"
-            >
-                <i class="fab fa-whatsapp"></i>
-                Direct WhatsApp Contact
-            </a>
-
-        </div>
-
-        <div class="audit-banner">
-            <h2>Complimentary Strategic Audit</h2>
-            <p>Claim your free 30-minute high-level diagnostic session.</p>
-
-            <a
-                href="https://calendly.com/menteglobalempresarial/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-glow"
-            >
-                <i class="fas fa-bolt"></i>
-                Claim Free Audit Now
-            </a>
-        </div>
+    <div class="lang-switch" onclick="toggleLanguage()">
+        <i class="fas fa-globe"></i>
+        <span id="lang-label">TÜRKÇE (TR)</span>
     </div>
-</header>
 
-<footer>
-    <p>&copy; 2026 NeuralFocus AI. Directed by Lucas Guzmán.</p>
-</footer>
+    <header id="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1 data-i18n="hero-title">NEURALFOCUS AI</h1>
+            <p class="hero-desc" data-i18n="hero-desc">
+                I am <strong>Lucas Guzmán</strong>. We provide pure strategic consulting in Artificial Intelligence, Precision Marketing, and Cybersecurity Architecture. From high-growth startups to heavy industrial enterprises, we engineer the digital roadmap for global scaling.
+            </p>
+            
+            <div class="btn-section">
+                <a href="https://calendly.com/menteglobalempresarial/30min" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-meeting">
+                    <i class="fas fa-calendar-alt"></i> <span data-i18n="btn-meeting">Request a Meeting</span>
+                </a>
+                
+                <a href="https://wa.me/5492246496971" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="btn-wp">Direct WhatsApp Contact</span>
+                </a>
+            </div>
+        </div>
+    </header>
 
+    <div class="media-bar">
+        <span>HABER7</span><span>CNNTURK</span><span>SABAH</span><span>YENI SAFAK</span><span>24TV</span>
+    </div>
+
+    <section class="container">
+        <h2 class="sec-title" data-i18n="services-title">Core Consulting Divisions</h2>
+        <div class="grid-3">
+            <div class="card" data-tilt data-tilt-max="12" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="card-img" alt="AI Consulting">
+                <div class="card-content">
+                    <i class="fas fa-brain"></i>
+                    <h3 data-i18n="ai-h">AI Strategy & Automation</h3>
+                    <p data-i18n="ai-p">We architect advanced cognitive frameworks to eliminate operational friction and accelerate scaling. Our consultancy deeply analyzes your legacy workflows to identify critical bottlenecks. We then provide comprehensive, tailor-made strategic deployment roadmaps for Machine Learning models and LLMs.</p>
+                </div>
+            </div>
+
+            <div class="card" data-tilt data-tilt-max="12" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Digital Marketing">
+                <div class="card-content">
+                    <i class="fas fa-chart-network"></i>
+                    <h3 data-i18n="mkt-h">Precision Digital Marketing</h3>
+                    <p data-i18n="mkt-p">Market penetration engineered through relentless data analysis. We go beyond traditional advertising by consulting on high-conversion B2B and B2C digital ecosystems.</p>
+                </div>
+            </div>
+
+            <div class="card" data-tilt data-tilt-max="12" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Cybersecurity">
+                <div class="card-content">
+                    <i class="fas fa-shield-virus"></i>
+                    <h3 data-i18n="cyb-h">Cybersecurity Architecture</h3>
+                    <p data-i18n="cyb-p">Your digital assets and trade secrets demand enterprise-grade fortitude. We provide high-level consulting on critical infrastructure vulnerabilities, conducting rigorous risk assessments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="padding-top: 20px;">
+        <div class="audit-banner" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.1">
+            <h2 data-i18n="free-h">Complimentary Strategic Audit</h2>
+            <p data-i18n="free-p">Unlock your growth potential. Claim a 1-on-1, 30-minute high-level diagnostic session. Zero cost, pure value.</p>
+            <a href="https://calendly.com/menteglobalempresarial/30min" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-glow">
+                <i class="fas fa-bolt"></i> <span data-i18n="free-btn">Claim Free Audit Now</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <strong>NeuralFocus AI</strong>. Directed by Lucas Guzmán.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <script>
+        particlesJS("particles-js", { "particles": { "number": { "value": 70 }, "color": { "value": "#00f2ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#bc13fe", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
+
+        const translations = {
+            en: {
+                "hero-title": "NEURALFOCUS AI",
+                "hero-desc": "I am Lucas Guzmán. We provide pure strategic consulting in Artificial Intelligence, Precision Marketing, and Cybersecurity Architecture. From high-growth startups to heavy industrial enterprises, we engineer the digital roadmap for global scaling.",
+                "btn-meeting": "Request a Meeting",
+                "btn-wp": "Direct WhatsApp Contact",
+                "services-title": "Core Consulting Divisions",
+                "ai-h": "AI Strategy & Automation",
+                "ai-p": "We architect advanced cognitive frameworks to eliminate operational friction and accelerate scaling. Our consultancy deeply analyzes your legacy workflows to identify critical bottlenecks. We then provide comprehensive, tailor-made strategic deployment roadmaps for Machine Learning models and LLMs.",
+                "mkt-h": "Precision Digital Marketing",
+                "mkt-p": "Market penetration engineered through relentless data analysis. We go beyond traditional advertising by consulting on high-conversion B2B and B2C digital ecosystems.",
+                "cyb-h": "Cybersecurity Architecture",
+                "cyb-p": "Your digital assets and trade secrets demand enterprise-grade fortitude. We provide high-level consulting on critical infrastructure vulnerabilities, conducting rigorous risk assessments.",
+                "free-h": "Complimentary Strategic Audit",
+                "free-p": "Claim a 1-on-1 diagnostic session. Zero cost, pure value.",
+                "free-btn": "Claim Free Audit Now",
+                "label": "TÜRKÇE (TR)"
+            },
+            tr: {
+                "hero-title": "NEURALFOCUS AI",
+                "hero-desc": "Ben Lucas Guzmán. Yapay Zeka, Hassas Pazarlama ve Siber Güvenlik Mimarisinde saf stratejik danışmanlık sağlıyoruz.",
+                "btn-meeting": "Toplantı Talep Et",
+                "btn-wp": "Doğrudan İletişim WhatsApp",
+                "services-title": "Temel Danışmanlık Bölümleri",
+                "ai-h": "Yapay Zeka Stratejisi",
+                "ai-p": "Operasyonel sürtünmeyi ortadan kaldırmak ve ölçeklenmeyi hızlandırmak için gelişmiş bilişsel çerçeveler tasarlıyoruz.",
+                "mkt-h": "Hassas Dijital Pazarlama",
+                "mkt-p": "Acımasız veri analizi ile tasarlanmış pazar penetrasyonu. Yüksek dönüşümlü B2B ve B2C dijital ekosistemler konusunda danışmanlık yapıyoruz.",
+                "cyb-h": "Siber Güvenlik Mimarisi",
+                "cyb-p": "Dijital varlıklarınız ve ticari sırlarınız kurumsal düzeyde güç gerektirir. Kritik altyapı güvenlik açıkları konusunda üst düzey danışmanlık sağlıyoruz.",
+                "free-h": "Ücretsiz Stratejik Denetim",
+                "free-p": "Birebir teşhis oturumu talep edin. Sıfır maliyet, saf değer.",
+                "free-btn": "Ücretsiz Denetimi Şimdi Talep Et",
+                "label": "ENGLISH (EN)"
+            }
+        };
+
+        let currentLang = 'en';
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'tr' : 'en';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.textContent = translations[currentLang][key];
+            });
+            document.getElementById('lang-label').textContent = translations[currentLang]["label"];
+        }
+    </script>
 </body>
 </html>
