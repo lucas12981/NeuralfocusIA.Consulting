@@ -10,13 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <style>
         :root { 
             --cyan: #00f2ff; 
             --purple: #bc13fe; 
             --dark: #050505; 
             --glass: rgba(20, 20, 20, 0.6); 
-            --skype: #00aff0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -59,7 +61,6 @@
         /* --- MEDIA AUTHORITY --- */
         .media-bar { background: #080808; padding: 40px 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
         .media-bar span { font-family: 'Orbitron'; font-weight: 900; font-size: 1.2rem; color: #333; transition: 0.4s; letter-spacing: 2px; }
-        .media-bar span:hover { color: var(--cyan); text-shadow: 0 0 15px var(--cyan); }
 
         /* --- SERVICES SECTION --- */
         section { padding: 100px 20px; position: relative; }
@@ -69,35 +70,25 @@
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
         .card { background: var(--glass); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; overflow: hidden; display: flex; flex-direction: column; backdrop-filter: blur(10px); }
         .card:hover { transform: translateY(-10px); border-color: var(--purple); box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(188, 19, 254, 0.1); }
-        
         .card-img { width: 100%; height: 220px; object-fit: cover; filter: grayscale(100%) opacity(0.7); transition: 0.5s; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .card:hover .card-img { filter: grayscale(0%) opacity(1); transform: scale(1.02); }
 
         .card-content { padding: 40px 30px; flex-grow: 1; }
         .card i { font-size: 2.2rem; color: var(--cyan); margin-bottom: 20px; }
         .card h3 { font-family: 'Orbitron'; margin-bottom: 20px; font-size: 1.3rem; color: #fff; letter-spacing: 1px; }
         .card p { color: #999; font-size: 0.95rem; line-height: 1.8; margin-bottom: 15px; }
-        .card ul { list-style: none; color: #bbb; font-size: 0.9rem; margin-top: 15px; }
-        .card ul li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-        .card ul li i { font-size: 0.8rem; color: var(--purple); margin: 0; }
 
         /* --- FREE AUDIT BANNER --- */
         .audit-banner { 
             background: linear-gradient(135deg, #0a0a0a 0%, #151515 100%); 
             border-radius: 30px; padding: 80px 40px; text-align: center; 
             border: 1px solid rgba(0, 242, 255, 0.2); position: relative; overflow: hidden;
-            box-shadow: inset 0 0 50px rgba(0, 242, 255, 0.05), 0 20px 50px rgba(0,0,0,0.5);
         }
-        .audit-banner::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(188, 19, 254, 0.1) 0%, transparent 70%); z-index: 0; pointer-events: none; }
-        .audit-banner h2 { font-family: 'Orbitron'; font-size: clamp(1.8rem, 4vw, 2.8rem); color: #fff; margin-bottom: 20px; position: relative; z-index: 1; }
-        .audit-banner p { color: #aaa; max-width: 700px; margin: 0 auto 40px auto; font-size: 1.1rem; position: relative; z-index: 1; }
         
         .btn-glow { 
-            background: var(--cyan); color: #000; padding: 22px 45px; border-radius: 50px; font-family: 'Orbitron'; font-weight: 900; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 15px; position: relative; z-index: 1; transition: 0.3s;
+            background: var(--cyan); color: #000; padding: 22px 45px; border-radius: 50px; font-family: 'Orbitron'; font-weight: 900; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; gap: 15px; transition: 0.3s;
             animation: pulse-glow 2s infinite; border: none; font-size: 1rem; cursor: pointer;
         }
-        .btn-glow:hover { transform: scale(1.05); animation: none; box-shadow: 0 0 40px var(--cyan); }
-        
+
         @keyframes pulse-glow {
             0% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.7); }
             70% { box-shadow: 0 0 0 20px rgba(0, 242, 255, 0); }
@@ -105,24 +96,6 @@
         }
 
         footer { background: #000; padding: 50px 20px; text-align: center; color: #555; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.02); }
-        footer strong { color: #888; }
-
-        /* --- MODAL FORMULARIO --- */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(10px); }
-        .modal-content { background: #111; margin: 10% auto; padding: 40px; border: 1px solid var(--purple); width: 90%; max-width: 500px; border-radius: 20px; box-shadow: 0 0 30px rgba(188, 19, 254, 0.3); position: relative; animation: slideDown 0.4s ease-out; }
-        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .close-btn { color: #aaa; position: absolute; top: 20px; right: 25px; font-size: 28px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .close-btn:hover { color: var(--cyan); }
-        .modal h2 { font-family: 'Orbitron'; color: #fff; margin-bottom: 25px; font-size: 1.5rem; text-align: center; }
-        
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; color: #ccc; margin-bottom: 8px; font-size: 0.85rem; font-family: 'Orbitron'; letter-spacing: 1px; }
-        .form-group input { width: 100%; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Inter'; font-size: 1rem; outline: none; transition: 0.3s; }
-        .form-group input:focus { border-color: var(--cyan); background: rgba(0, 242, 255, 0.05); }
-        .form-group input[type="datetime-local"]::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
-        
-        .btn-submit { width: 100%; padding: 18px; border-radius: 10px; background: var(--purple); color: #fff; font-family: 'Orbitron'; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; font-size: 1rem; margin-top: 10px; }
-        .btn-submit:hover { background: var(--cyan); color: #000; box-shadow: 0 0 20px rgba(0, 242, 255, 0.4); }
     </style>
 </head>
 <body>
@@ -141,7 +114,7 @@
             </p>
             
             <div class="btn-section">
-                <button onclick="openModal()" class="btn btn-meeting">
+                <button onclick="openCalendly()" class="btn btn-meeting">
                     <i class="fas fa-calendar-alt"></i> <span data-i18n="btn-meeting">Request a Meeting</span>
                 </button>
                 <a href="https://wa.me/5492246496971" class="btn btn-whatsapp">
@@ -158,18 +131,12 @@
     <section class="container">
         <h2 class="sec-title" data-i18n="services-title">Core Consulting Divisions</h2>
         <div class="grid-3">
-            
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" class="card-img" alt="AI Consulting">
                 <div class="card-content">
                     <i class="fas fa-brain"></i>
                     <h3 data-i18n="ai-h">AI Strategy & Automation</h3>
-                    <p data-i18n="ai-p">We architect cognitive frameworks to eliminate operational friction. We analyze your workflows and provide strategic deployment roadmaps for Machine Learning models and LLMs, drastically reducing OPEX while scaling output.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> <span data-i18n="ai-l1">Workflow Bottleneck Audits</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="ai-l2">Predictive Maintenance Logic</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="ai-l3">Autonomous CRM Integration</span></li>
-                    </ul>
+                    <p data-i18n="ai-p">We architect cognitive frameworks to eliminate operational friction. We analyze your workflows and provide strategic deployment roadmaps for Machine Learning models and LLMs.</p>
                 </div>
             </div>
 
@@ -178,12 +145,7 @@
                 <div class="card-content">
                     <i class="fas fa-chart-network"></i>
                     <h3 data-i18n="mkt-h">Precision Digital Marketing</h3>
-                    <p data-i18n="mkt-p">Market penetration engineered through data. Whether you manage a local retail chain or export heavy machinery globally, we design high-conversion B2B and B2C digital ecosystems focused strictly on maximizing ROI and market share.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> <span data-i18n="mkt-l1">International SEO/SEM Strategy</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="mkt-l2">Programmatic Ad Consulting</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="mkt-l3">B2B Lead Funnel Architecture</span></li>
-                    </ul>
+                    <p data-i18n="mkt-p">Market penetration engineered through data. Focused strictly on maximizing ROI and market share.</p>
                 </div>
             </div>
 
@@ -192,22 +154,16 @@
                 <div class="card-content">
                     <i class="fas fa-shield-virus"></i>
                     <h3 data-i18n="cyb-h">Cybersecurity Architecture</h3>
-                    <p data-i18n="cyb-p">Your digital assets demand enterprise-grade fortitude. We consult on infrastructure vulnerabilities, advising on Zero-Trust architectures and strict compliance protocols to ensure your corporate data and trade secrets remain impenetrable.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> <span data-i18n="cyb-l1">Vulnerability Risk Assessments</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="cyb-l2">Zero-Trust Protocol Design</span></li>
-                        <li><i class="fas fa-check"></i> <span data-i18n="cyb-l3">Corporate Data Compliance</span></li>
-                    </ul>
+                    <p data-i18n="cyb-p">Infrastructure vulnerabilities, Zero-Trust architectures and strict compliance protocols.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section class="container" style="padding-top: 20px;">
         <div class="audit-banner">
             <h2 data-i18n="free-h">Complimentary Strategic Audit</h2>
-            <p data-i18n="free-p">Unlock your growth potential. Claim a 1-on-1, 30-minute high-level diagnostic session. We will evaluate your current AI readiness, marketing architecture, and digital security posture. Zero cost, pure value.</p>
+            <p data-i18n="free-p">Unlock your growth potential. Claim a 1-on-1, 30-minute high-level diagnostic session. Zero cost, pure value.</p>
             <a href="mailto:menteglobalempresarial@gmail.com?subject=Request%20Free%20Strategic%20Audit" class="btn-glow">
                 <i class="fas fa-bolt"></i> <span data-i18n="free-btn">Claim Free Audit Now</span>
             </a>
@@ -216,49 +172,24 @@
 
     <footer>
         <p>&copy; 2026 <strong>NeuralFocus AI</strong>. Directed by Lucas Guzmán.</p>
-        <p style="margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;" data-i18n="foot-tag">Consulting: Intelligence | Market Scaling | Security</p>
     </footer>
-
-    <div id="meetingModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 data-i18n="mod-title">Schedule Video Call</h2>
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Request Sent!'); closeModal();">
-                <div class="form-group">
-                    <label data-i18n="mod-name">Full Name</label>
-                    <input type="text" required placeholder="John Doe">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="mod-email">Email Address</label>
-                    <input type="email" required placeholder="contact@company.com">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="mod-comp">Company / Business</label>
-                    <input type="text" required placeholder="Your Company Ltd.">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="mod-date">Select Date & Time</label>
-                    <input type="datetime-local" required>
-                </div>
-                <button type="submit" class="btn-submit" data-i18n="mod-btn">Confirm Meeting</button>
-            </form>
-        </div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Configuración premium de partículas
         particlesJS("particles-js", { "particles": { "number": { "value": 70 }, "color": { "value": "#00f2ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.4 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#bc13fe", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5 } } });
 
-        // Lógica del Modal
-        function openModal() { document.getElementById("meetingModal").style.display = "block"; }
-        function closeModal() { document.getElementById("meetingModal").style.display = "none"; }
-        window.onclick = function(event) {
-            let modal = document.getElementById("meetingModal");
-            if (event.target == modal) { modal.style.display = "none"; }
+        // INTEGRACIÓN DE CALENDLY
+        function openCalendly() {
+            Calendly.initPopupWidget({
+                url: 'https://calendly.com/menteglobalempresarial/30min',
+                branding: {
+                    primaryColor: '00f2ff',
+                    textColor: '050505'
+                }
+            });
+            return false;
         }
 
-        // Diccionario de Traducciones
         const translations = {
             en: {
                 "hero-title": "NEURALFOCUS AI",
@@ -266,75 +197,33 @@
                 "btn-meeting": "Request a Meeting",
                 "btn-wp": "Direct WhatsApp Contact",
                 "services-title": "Core Consulting Divisions",
-                
                 "ai-h": "AI Strategy & Automation",
-                "ai-p": "We architect cognitive frameworks to eliminate operational friction. We analyze your workflows and provide strategic deployment roadmaps for Machine Learning models and LLMs, drastically reducing OPEX while scaling output.",
-                "ai-l1": "Workflow Bottleneck Audits",
-                "ai-l2": "Predictive Maintenance Logic",
-                "ai-l3": "Autonomous CRM Integration",
-                
+                "ai-p": "We architect cognitive frameworks to eliminate operational friction.",
                 "mkt-h": "Precision Digital Marketing",
-                "mkt-p": "Market penetration engineered through data. Whether you manage a local retail chain or export heavy machinery globally, we design high-conversion B2B and B2C digital ecosystems focused strictly on maximizing ROI and market share.",
-                "mkt-l1": "International SEO/SEM Strategy",
-                "mkt-l2": "Programmatic Ad Consulting",
-                "mkt-l3": "B2B Lead Funnel Architecture",
-                
+                "mkt-p": "Market penetration engineered through data and high-conversion ecosystems.",
                 "cyb-h": "Cybersecurity Architecture",
-                "cyb-p": "Your digital assets demand enterprise-grade fortitude. We consult on infrastructure vulnerabilities, advising on Zero-Trust architectures and strict compliance protocols to ensure your corporate data and trade secrets remain impenetrable.",
-                "cyb-l1": "Vulnerability Risk Assessments",
-                "cyb-l2": "Zero-Trust Protocol Design",
-                "cyb-l3": "Corporate Data Compliance",
-
+                "cyb-p": "Zero-Trust architectures and strict compliance protocols.",
                 "free-h": "Complimentary Strategic Audit",
-                "free-p": "Unlock your growth potential. Claim a 1-on-1, 30-minute high-level diagnostic session. We will evaluate your current AI readiness, marketing architecture, and digital security posture. Zero cost, pure value.",
+                "free-p": "Claim a 1-on-1 diagnostic session. Zero cost, pure value.",
                 "free-btn": "Claim Free Audit Now",
-                "foot-tag": "Consulting: Intelligence | Market Scaling | Security",
-                "label": "TÜRKÇE (TR)",
-
-                "mod-title": "Schedule Video Call",
-                "mod-name": "Full Name",
-                "mod-email": "Email Address",
-                "mod-comp": "Company / Business",
-                "mod-date": "Select Date & Time",
-                "mod-btn": "Confirm Meeting"
+                "label": "TÜRKÇE (TR)"
             },
             tr: {
                 "hero-title": "NEURALFOCUS AI",
-                "hero-desc": "Ben Lucas Guzmán. Yapay Zeka, Hassas Pazarlama ve Siber Güvenlik Mimarisinde saf stratejik danışmanlık sağlıyoruz. Hızlı büyüyen girişimlerden ağır sanayi kuruluşlarına kadar küresel ölçeklenme için dijital yol haritasını tasarlıyoruz.",
+                "hero-desc": "Ben Lucas Guzmán. Yapay Zeka, Hassas Pazarlama ve Siber Güvenlik Mimarisinde saf stratejik danışmanlık sağlıyoruz. Küresel ölçeklenme için dijital yol haritasını tasarlıyoruz.",
                 "btn-meeting": "Toplantı Talep Et",
                 "btn-wp": "Doğrudan İletişim WhatsApp",
                 "services-title": "Temel Danışmanlık Bölümleri",
-                
                 "ai-h": "Yapay Zeka Stratejisi",
-                "ai-p": "Operasyonel sürtünmeyi ortadan kaldırmak için bilişsel çerçeveler tasarlıyoruz. İş akışlarınızı analiz ediyor ve Makine Öğrenimi modelleri ve LLM'ler için stratejik dağıtım yol haritaları sunarak üretimi artırırken işletme giderlerini büyük ölçüde azaltıyoruz.",
-                "ai-l1": "İş Akışı Darboğaz Denetimleri",
-                "ai-l2": "Kestirimci Bakım Mantığı",
-                "ai-l3": "Otonom CRM Entegrasyonu",
-                
+                "ai-p": "Operasyonel sürtünmeyi ortadan kaldırmak için bilişsel çerçeveler tasarlıyoruz.",
                 "mkt-h": "Hassas Dijital Pazarlama",
-                "mkt-p": "Veri ile tasarlanmış pazar penetrasyonu. İster yerel bir perakende zincirini yönetin, ister küresel olarak ağır makine ihraç edin, tamamen yatırım getirisini ve pazar payını en üst düzeye çıkarmaya odaklanmış yüksek dönüşümlü B2B ve B2C dijital ekosistemleri tasarlıyoruz.",
-                "mkt-l1": "Uluslararası SEO/SEM Stratejisi",
-                "mkt-l2": "Programatik Reklam Danışmanlığı",
-                "mkt-l3": "B2B Müşteri Hunisi Mimarisi",
-                
+                "mkt-p": "Veri ile tasarlanmış pazar penetrasyonu ve yüksek dönüşümlü ekosistemler.",
                 "cyb-h": "Siber Güvenlik Mimarisi",
-                "cyb-p": "Dijital varlıklarınız kurumsal düzeyde güç gerektirir. Altyapı güvenlik açıkları konusunda danışmanlık yapıyor, kurumsal verilerinizin ve ticari sırlarınızın aşılmaz kalmasını sağlamak için Sıfır Güven (Zero-Trust) mimarileri ve sıkı uyumluluk protokolleri hakkında tavsiyelerde bulunuyoruz.",
-                "cyb-l1": "Güvenlik Açığı Risk Değerlendirmeleri",
-                "cyb-l2": "Sıfır Güven (Zero-Trust) Tasarımı",
-                "cyb-l3": "Kurumsal Veri Uyumluluğu",
-
+                "cyb-p": "Sıfır Güven mimarileri ve sıkı uyumluluk protokolleri.",
                 "free-h": "Ücretsiz Stratejik Denetim",
-                "free-p": "Büyüme potansiyelinizi ortaya çıkarın. Birebir, 30 dakikalık üst düzey bir teşhis oturumu talep edin. Mevcut yapay zeka hazırlığınızı, pazarlama mimarinizi ve dijital güvenlik duruşunuzu değerlendireceğiz. Sıfır maliyet, saf değer.",
+                "free-p": "Birebir teşhis oturumu talep edin. Sıfır maliyet, saf değer.",
                 "free-btn": "Ücretsiz Denetimi Şimdi Talep Et",
-                "foot-tag": "Danışmanlık: Zeka | Pazar Ölçekleme | Güvenlik",
-                "label": "ENGLISH (EN)",
-
-                "mod-title": "Görüntülü Görüşme Planla",
-                "mod-name": "Ad Soyad",
-                "mod-email": "E-posta Adresi",
-                "mod-comp": "Şirket / İşletme",
-                "mod-date": "Tarih ve Saat Seçin",
-                "mod-btn": "Toplantıyı Onayla"
+                "label": "ENGLISH (EN)"
             }
         };
 
