@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <meta name="google-site-verification" content="U10vjOJqrOwiMgNYi_WFO4oc49YES6KxSeCfuIZHPKA" />
-    <title>NeuralFocus AI | Strategic AI & Cybersecurity Consultancy</title>
-    <meta name="description" content="Strategic consulting in AI, Marketing, and Cybersecurity for the Turkish market. Directed by Lucas Guzmán. Engineering efficiency for Industry and Commerce.">
+    <title>NeuralFocus AI | Global Strategic Consultancy</title>
+    <meta name="description" content="Independent strategic consulting in AI, Digital Marketing, and Cybersecurity. Directed by Lucas Guzmán. Engineering efficiency for global businesses.">
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-
     <style>
         :root { 
             --cyan: #00f2ff; 
@@ -91,7 +87,7 @@
         .btn-alt { border: 1px solid var(--purple); color: #fff; background: rgba(188, 19, 254, 0.1); backdrop-filter: blur(5px); }
         .btn-alt:hover { background: var(--purple); transform: scale(1.05); }
 
-        /* --- CARRUSEL DE TECNOLOGÍA (TRUST BAR) --- */
+        /* --- CARRUSEL DE TECNOLOGÍA --- */
         .tech-carousel {
             background: rgba(0,0,0,0.6); padding: 30px 0; border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border); overflow: hidden; white-space: nowrap; backdrop-filter: blur(10px);
@@ -115,16 +111,39 @@
             font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--cyan); letter-spacing: 2px; text-transform: uppercase;
         }
 
-        /* --- SECCIÓN LIDERAZGO --- */
+        /* --- SECCIÓN LIDERAZGO (CON VIDEO INTEGRADO) --- */
         .leadership-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 50px; align-items: center; background: var(--glass);
             border-radius: 30px; padding: 40px; border: 1px solid var(--border); backdrop-filter: blur(15px);
         }
-        .profile-img {
-            width: 100%; height: 350px; object-fit: cover; border-radius: 20px; filter: grayscale(0.2) contrast(1.1);
-            border: 2px solid var(--purple); box-shadow: 0 0 30px rgba(188, 19, 254, 0.2);
+        
+        /* Marco del Video */
+        .video-wrapper {
+            max-width: 340px;
+            margin: 0 auto;
+            position: relative;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(188, 19, 254, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
+        .video-wrapper:hover { 
+            box-shadow: 0 15px 40px rgba(0, 242, 255, 0.4); 
+            transform: translateY(-5px); 
+        }
+        .video-player {
+            width: 100%;
+            border-radius: 20px;
+            display: block;
+            background: #000;
+            object-fit: cover;
+        }
+        .video-caption { text-align: center; margin-top: 25px; }
+        .video-caption h4 { font-family: 'Orbitron'; color: #fff; font-size: 1.4rem; letter-spacing: 1px;}
+        .video-caption p { color: var(--cyan); font-family: 'Inter'; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; margin-top: 5px;}
+
         .profile-text h3 { font-family: 'Orbitron'; font-size: 2rem; margin-bottom: 10px; color: #fff; }
         .profile-text .role { color: var(--cyan); font-weight: 700; font-family: 'Orbitron'; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 20px; display: block; }
         .profile-text p { color: #bbb; margin-bottom: 25px; font-size: 1.05rem; }
@@ -182,6 +201,7 @@
         @media (max-width: 768px) {
             .leadership-grid { padding: 20px; text-align: center; }
             .btn { width: 100%; justify-content: center; }
+            .video-wrapper { max-width: 280px; }
         }
     </style>
 </head>
@@ -203,11 +223,11 @@
         <div id="particles-js"></div>
         <div class="hero-content">
             <h1 data-i18n="h-title">NEURALFOCUS AI</h1>
-            <p class="hero-desc" data-i18n="h-desc">Strategic AI Architecture, Precision Marketing, and Zero-Trust Cybersecurity. We engineer the future of Turkish Industry.</p>
+            <p class="hero-desc" data-i18n="h-desc">Strategic AI Consulting, Precision Marketing, and Zero-Trust Cybersecurity. We engineer the future of global businesses.</p>
             <div class="btn-group">
-                <button onclick="if(typeof Calendly !== 'undefined') { Calendly.initPopupWidget({url: 'https://calendly.com/menteglobalempresarial/30min'}); return false; }" class="btn btn-main">
+                <a href="mailto:menteglobalempresarial@gmail.com?subject=Consultancy%20Session%20Request" class="btn btn-main">
                     <i class="fas fa-calendar-alt"></i> <span data-i18n="b-meet">Consultancy Session</span>
-                </button>
+                </a>
                 <a href="https://wa.me/5492246496971" target="_blank" class="btn btn-alt">
                     <i class="fab fa-whatsapp"></i> <span data-i18n="b-wp">WhatsApp Direct</span>
                 </a>
@@ -234,39 +254,51 @@
 
     <section class="container">
         <div class="leadership-grid">
-            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80&w=800" alt="Neural Architecture" class="profile-img">
+            
+            <div class="leadership-media">
+                <div class="video-wrapper">
+                    <video class="video-player" controls preload="metadata">
+                        <source src="./Vídeo_de_Avatar_IV.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-caption">
+                    <h4 data-i18n="l-name">Lucas Guzmán</h4>
+                    <p data-i18n="l-role-sub">AI & Cyber-Infrastructure Consultant</p>
+                </div>
+            </div>
             
             <div class="profile-text">
-                <h3 data-i18n="l-name">Lucas Guzmán</h3>
-                <span class="role" data-i18n="l-role">DIRECTOR OF STRATEGY & AI INNOVATION</span>
-                <p data-i18n="l-desc">I specialize in transforming complex data into high-performance business assets. My mission is to integrate elite AI systems into the Turkish productive fabric, ensuring growth, security, and global competitiveness.</p>
+                <h3 data-i18n="l-title">Strategic Leadership</h3>
+                <span class="role" data-i18n="l-role">INDEPENDENT STRATEGY ADVISOR</span>
+                <p data-i18n="l-desc">I am an independent consultant specializing in transforming complex data into high-performance business assets. My mission is to guide companies worldwide in integrating elite AI systems, ensuring growth, security, and global competitiveness without the overhead of an in-house team.</p>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Signature_of_Zuzana_Čaputová.svg" alt="Signature" style="height: 40px; filter: invert(1) opacity(0.4); pointer-events: none;">
             </div>
         </div>
     </section>
 
     <section class="container">
-        <h2 class="sec-title" data-i18n="m-title">Our Strategic Method</h2>
+        <h2 class="sec-title" data-i18n="m-title">Our Advisory Method</h2>
         <div class="method-grid">
             <div class="method-card">
                 <span>01</span>
                 <h4 data-i18n="m1-h">Audit</h4>
-                <p data-i18n="m1-p">Deep analysis of your current digital infrastructure and operational pain points.</p>
+                <p data-i18n="m1-p">Deep advisory analysis of your current digital infrastructure and operational bottlenecks.</p>
             </div>
             <div class="method-card">
                 <span>02</span>
                 <h4 data-i18n="m2-h">Strategy</h4>
-                <p data-i18n="m2-p">Bespoke roadmap design utilizing advanced AI and Zero-Trust security protocols.</p>
+                <p data-i18n="m2-p">Bespoke consulting roadmap utilizing advanced AI and Zero-Trust security protocols.</p>
             </div>
             <div class="method-card">
                 <span>03</span>
                 <h4 data-i18n="m3-h">Execution</h4>
-                <p data-i18n="m3-p">Seamless deployment of systems engineered for zero operational downtime.</p>
+                <p data-i18n="m3-p">Strategic oversight for the seamless deployment of systems engineered for zero downtime.</p>
             </div>
             <div class="method-card">
                 <span>04</span>
                 <h4 data-i18n="m4-h">Evolution</h4>
-                <p data-i18n="m4-p">Continuous optimization and monitoring to stay ahead of the global market curve.</p>
+                <p data-i18n="m4-p">Continuous consulting to optimize operations and keep you ahead of the global market.</p>
             </div>
         </div>
     </section>
@@ -277,49 +309,49 @@
             <div class="card">
                 <div class="card-content">
                     <i class="fas fa-brain"></i>
-                    <h3 data-i18n="ai-h">AI & Automation Logic</h3>
-                    <p data-i18n="ai-p">We architect cognitive frameworks to eliminate operational friction. From predictive analysis to deep learning process automation.</p>
+                    <h3 data-i18n="ai-h">AI & Automation Advisory</h3>
+                    <p data-i18n="ai-p">We provide expert consulting on cognitive frameworks to eliminate operational friction, from predictive analysis to process automation.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <i class="fas fa-chart-line"></i>
-                    <h3 data-i18n="mkt-h">Precision Growth Marketing</h3>
-                    <p data-i18n="mkt-p">Data-driven market penetration. We capture global B2B leads for exporters and optimize conversion funnels for local commerce.</p>
+                    <h3 data-i18n="mkt-h">Growth Strategy Consulting</h3>
+                    <p data-i18n="mkt-p">Data-driven global market penetration strategies. We advise on capturing international B2B leads and optimizing conversion funnels.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <i class="fas fa-shield-virus"></i>
-                    <h3 data-i18n="cyb-h">Cybersecurity Architecture</h3>
-                    <p data-i18n="cyb-p">Enterprise-grade fortitude for your digital assets. Zero-Trust protocol design and vulnerability risk assessments.</p>
+                    <h3 data-i18n="cyb-h">Cybersecurity Strategy</h3>
+                    <p data-i18n="cyb-p">Strategic guidance for enterprise-grade fortitude. We design Zero-Trust protocols and conduct independent vulnerability assessments.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="container">
-        <h2 class="sec-title" data-i18n="sect-title">Industries We Transform</h2>
+        <h2 class="sec-title" data-i18n="sect-title">Global Industries We Advise</h2>
         <div class="grid-3">
             <div class="card">
                 <div class="card-content">
                     <i class="fas fa-industry"></i>
-                    <h3 data-i18n="s1-h">Textile & Manufacturing</h3>
-                    <p data-i18n="s1-p">AI-driven supply chain optimization and predictive maintenance engineering for Turkish factories.</p>
+                    <h3 data-i18n="s1-h">Global Manufacturing</h3>
+                    <p data-i18n="s1-p">Consulting on AI-driven supply chain optimization and predictive maintenance engineering for manufacturing facilities worldwide.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <i class="fas fa-ship"></i>
-                    <h3 data-i18n="s2-h">Logistics & Trade</h3>
-                    <p data-i18n="s2-p">Smart routing architecture and automated inventory tracking for B2B exporters in the Bosphorus region.</p>
+                    <h3 data-i18n="s2-h">International Trade & Logistics</h3>
+                    <p data-i18n="s2-p">Smart routing architecture and automated inventory advisory for international B2B exporters operating globally.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <i class="fas fa-h-square"></i>
-                    <h3 data-i18n="s3-h">Elite Hospitality</h3>
-                    <p data-i18n="s3-p">Hyper-personalized guest experiences and automated CRM deployment for high-end tourism and retail.</p>
+                    <h3 data-i18n="s3-h">Elite Retail & Services</h3>
+                    <p data-i18n="s3-p">Strategic consulting for hyper-personalized client experiences and automated CRM deployment in the high-end sector.</p>
                 </div>
             </div>
         </div>
@@ -328,7 +360,7 @@
     <section class="container">
         <div class="audit-banner">
             <h2 data-i18n="free-h" style="font-family: 'Orbitron'; font-size: 2rem; color: #fff; margin-bottom: 15px;">Complimentary Strategic Audit</h2>
-            <p data-i18n="free-p" style="color: #ccc; font-size: 1.1rem;">Claim a 1-on-1 diagnostic session via email. Zero cost, pure value.</p>
+            <p data-i18n="free-p" style="color: #ccc; font-size: 1.1rem;">Claim a 1-on-1 advisory session via email. Zero cost, pure value.</p>
             <a href="mailto:menteglobalempresarial@gmail.com?subject=Strategic%20Audit%20Inquiry" class="btn-glow">
                 <i class="fas fa-envelope"></i> <span data-i18n="free-btn">Contact via Email</span>
             </a>
@@ -336,7 +368,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 <strong>NeuralFocus AI</strong> | Directed by Lucas Guzmán | Istanbul - Global</p>
+        <p>&copy; 2026 <strong>NeuralFocus AI</strong> | Strategic Consultancy by Lucas Guzmán | Global Operations based in Argentina</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
@@ -346,51 +378,55 @@
         const translations = {
             en: {
                 "h-title": "NEURALFOCUS AI",
-                "h-desc": "Strategic AI Architecture, Precision Marketing, and Zero-Trust Cybersecurity. We engineer the future of Turkish Industry.",
+                "h-desc": "Strategic AI Consulting, Precision Marketing, and Zero-Trust Cybersecurity. We engineer the future of global businesses.",
                 "b-meet": "Consultancy Session",
                 "b-wp": "WhatsApp Direct",
                 "l-name": "Lucas Guzmán",
-                "l-role": "DIRECTOR OF STRATEGY & AI INNOVATION",
-                "l-desc": "I specialize in transforming complex data into high-performance business assets. My mission is to integrate elite AI systems into the Turkish productive fabric, ensuring growth, security, and global competitiveness.",
-                "m-title": "Our Strategic Method",
-                "m1-h": "Audit", "m1-p": "Deep analysis of your current digital infrastructure and operational pain points.",
-                "m2-h": "Strategy", "m2-p": "Bespoke roadmap design utilizing advanced AI and Zero-Trust security protocols.",
-                "m3-h": "Execution", "m3-p": "Seamless deployment of systems engineered for zero operational downtime.",
-                "m4-h": "Evolution", "m4-p": "Continuous optimization and monitoring to stay ahead of the global market curve.",
+                "l-role-sub": "AI & Cyber-Infrastructure Consultant",
+                "l-title": "Strategic Leadership",
+                "l-role": "INDEPENDENT STRATEGY ADVISOR",
+                "l-desc": "I am an independent consultant specializing in transforming complex data into high-performance business assets. My mission is to guide companies worldwide in integrating elite AI systems, ensuring growth, security, and global competitiveness without the overhead of an in-house team.",
+                "m-title": "Our Advisory Method",
+                "m1-h": "Audit", "m1-p": "Deep advisory analysis of your current digital infrastructure and operational bottlenecks.",
+                "m2-h": "Strategy", "m2-p": "Bespoke consulting roadmap utilizing advanced AI and Zero-Trust security protocols.",
+                "m3-h": "Execution", "m3-p": "Strategic oversight for the seamless deployment of systems engineered for zero downtime.",
+                "m4-h": "Evolution", "m4-p": "Continuous consulting to optimize operations and keep you ahead of the global market.",
                 "serv-title": "Consulting Divisions",
-                "ai-h": "AI & Automation Logic", "ai-p": "We architect cognitive frameworks to eliminate operational friction. From predictive analysis to deep learning process automation.",
-                "mkt-h": "Precision Growth Marketing", "mkt-p": "Data-driven market penetration. We capture global B2B leads for exporters and optimize conversion funnels for local commerce.",
-                "cyb-h": "Cybersecurity Architecture", "cyb-p": "Enterprise-grade fortitude for your digital assets. Zero-Trust protocol design and vulnerability risk assessments.",
-                "sect-title": "Industries We Transform",
-                "s1-h": "Textile & Manufacturing", "s1-p": "AI-driven supply chain optimization and predictive maintenance engineering for Turkish factories.",
-                "s2-h": "Logistics & Trade", "s2-p": "Smart routing architecture and automated inventory tracking for B2B exporters in the Bosphorus region.",
-                "s3-h": "Elite Hospitality", "s3-p": "Hyper-personalized guest experiences and automated CRM deployment for high-end tourism and retail.",
-                "free-h": "Complimentary Strategic Audit", "free-p": "Claim a 1-on-1 diagnostic session via email. Zero cost, pure value.",
+                "ai-h": "AI & Automation Advisory", "ai-p": "We provide expert consulting on cognitive frameworks to eliminate operational friction, from predictive analysis to process automation.",
+                "mkt-h": "Growth Strategy Consulting", "mkt-p": "Data-driven global market penetration strategies. We advise on capturing international B2B leads and optimizing conversion funnels.",
+                "cyb-h": "Cybersecurity Strategy", "cyb-p": "Strategic guidance for enterprise-grade fortitude. We design Zero-Trust protocols and conduct independent vulnerability assessments.",
+                "sect-title": "Global Industries We Advise",
+                "s1-h": "Global Manufacturing", "s1-p": "Consulting on AI-driven supply chain optimization and predictive maintenance engineering for manufacturing facilities worldwide.",
+                "s2-h": "International Trade & Logistics", "s2-p": "Smart routing architecture and automated inventory advisory for international B2B exporters operating globally.",
+                "s3-h": "Elite Retail & Services", "s3-p": "Strategic consulting for hyper-personalized client experiences and automated CRM deployment in the high-end sector.",
+                "free-h": "Complimentary Strategic Audit", "free-p": "Claim a 1-on-1 advisory session via email. Zero cost, pure value.",
                 "free-btn": "Contact via Email",
                 "label": "TÜRKÇE (TR)"
             },
             tr: {
                 "h-title": "NEURALFOCUS AI",
-                "h-desc": "Stratejik YZ Mimarisi, Hassas Pazarlama ve Sıfır Güven Siber Güvenlik. Türk Sanayisinin geleceğini tasarlıyoruz.",
+                "h-desc": "Stratejik YZ Danışmanlığı, Hassas Pazarlama ve Sıfır Güven Siber Güvenlik. Küresel işletmelerin geleceğini tasarlıyoruz.",
                 "b-meet": "Danışmanlık Oturumu",
                 "b-wp": "WhatsApp Doğrudan",
                 "l-name": "Lucas Guzmán",
-                "l-role": "STRATEJİ VE YZ İNOVASYON DİREKTÖRÜ",
-                "l-desc": "Karmaşık verileri yüksek performanslı ticari varlıklara dönüştürme konusunda uzmanım. Misyonum, büyüme, güvenlik ve küresel rekabet gücünü güvence altına alarak, elit YZ sistemlerini Türk üretim yapısına entegre etmektir.",
-                "m-title": "Stratejik Yöntemimiz",
-                "m1-h": "Denetim", "m1-p": "Mevcut dijital altyapınızın ve operasyonel sorunlarınızın derinlemesine analizi.",
-                "m2-h": "Strateji", "m2-p": "Gelişmiş YZ ve Sıfır Güven güvenlik protokollerini kullanan özel yol haritası tasarımı.",
-                "m3-h": "Uygulama", "m3-p": "Sıfır operasyonel kesinti için tasarlanmış sistemlerin sorunsuz kurulumu.",
-                "m4-h": "Gelişim", "m4-p": "Küresel pazar eğrisinin önünde kalmak için sürekli optimizasyon ve izleme.",
+                "l-role-sub": "YZ ve Siber Altyapı Danışmanı",
+                "l-title": "Stratejik Liderlik",
+                "l-role": "BAĞIMSIZ STRATEJİ DANIŞMANI",
+                "l-desc": "Karmaşık verileri yüksek performanslı ticari varlıklara dönüştürme konusunda uzmanlaşmış bağımsız bir danışmanım. Misyonum, büyüme ve küresel rekabet gücünü güvence altına alarak, şirket içi bir ekibin genel giderleri olmadan şirketlere elit YZ sistemlerini entegre etme konusunda rehberlik etmektir.",
+                "m-title": "Danışmanlık Yöntemimiz",
+                "m1-h": "Denetim", "m1-p": "Mevcut dijital altyapınızın ve operasyonel darboğazlarınızın derinlemesine danışmanlık analizi.",
+                "m2-h": "Strateji", "m2-p": "Gelişmiş YZ ve Sıfır Güven güvenlik protokollerini kullanan özel danışmanlık yol haritası.",
+                "m3-h": "Uygulama", "m3-p": "Sıfır kesinti için tasarlanmış sistemlerin sorunsuz kurulumu için stratejik gözetim.",
+                "m4-h": "Gelişim", "m4-p": "Operasyonları optimize etmek ve sizi küresel pazarın önünde tutmak için sürekli danışmanlık.",
                 "serv-title": "Danışmanlık Bölümleri",
-                "ai-h": "YZ ve Otomasyon Mantığı", "ai-p": "Operasyonel sürtünmeyi ortadan kaldırmak için bilişsel çerçeveler tasarlıyoruz. Öngörülü analizden derin öğrenme süreç otomasyonuna kadar.",
-                "mkt-h": "Hassas Büyüme Pazarlaması", "mkt-p": "Veri odaklı pazar penetrasyonu. İhracatçılar için küresel B2B müşteri adayları yakalıyor ve yerel ticaret için dönüşüm hunilerini optimize ediyoruz.",
-                "cyb-h": "Siber Güvenlik Mimarisi", "cyb-p": "Dijital varlıklarınız için kurumsal düzeyde güç. Sıfır Güven protokol tasarımı ve güvenlik açığı risk değerlendirmeleri.",
-                "sect-title": "Dönüştürdüğümüz Sektörler",
-                "s1-h": "Tekstil ve Üretim", "s1-p": "Türk fabrikaları için YZ odaklı tedarik zinciri optimizasyonu ve öngörülü bakım mühendisliği.",
-                "s2-h": "Lojistik ve Ticaret", "s2-p": "Boğaziçi bölgesindeki B2B ihracatçıları için akıllı rotalama mimarisi ve otomatik envanter takibi.",
-                "s3-h": "Seçkin Konaklama", "s3-p": "Üst düzey turizm ve perakende için hiper kişiselleştirilmiş misafir deneyimleri ve otomatik CRM kurulumu.",
-                "free-h": "Ücretsiz Stratejik Denetim", "free-p": "E-posta yoluyla birebir teşhis oturumu talep edin. Sıfır maliyet, saf değer.",
+                "ai-h": "YZ ve Otomasyon Danışmanlığı", "ai-p": "Öngörülü analizden süreç otomasyonuna kadar operasyonel sürtünmeyi ortadan kaldırmak için bilişsel çerçeveler üzerinde uzman danışmanlık sağlıyoruz.",
+                "mkt-h": "Büyüme Stratejisi Danışmanlığı", "mkt-p": "Veri odaklı küresel pazar penetrasyon stratejileri. Uluslararası B2B müşteri adaylarını yakalama ve dönüşüm hunilerini optimize etme konusunda tavsiyelerde bulunuyoruz.",
+                "cyb-h": "Siber Güvenlik Stratejisi", "cyb-p": "Kurumsal düzeyde güç için stratejik rehberlik. Sıfır Güven protokolleri tasarlıyor ve bağımsız güvenlik açığı değerlendirmeleri yapıyoruz.",
+                "sect-title": "Danışmanlık Verdiğimiz Küresel Sektörler",
+                "s1-h": "Küresel Üretim", "s1-p": "Dünya çapındaki üretim tesisleri için YZ odaklı tedarik zinciri optimizasyonu ve öngörülü bakım mühendisliği danışmanlığı.",
+                "s2-h": "Uluslararası Ticaret ve Lojistik", "s2-p": "Küresel olarak faaliyet gösteren uluslararası B2B ihracatçıları için akıllı rotalama mimarisi ve otomatik envanter danışmanlığı.",
+                "s3-h": "Seçkin Perakende ve Hizmetler", "s3-p": "Üst düzey sektörde hiper kişiselleştirilmiş müşteri deneyimleri ve otomatik CRM kurulumu için stratejik danışmanlık.",
+                "free-h": "Ücretsiz Stratejik Denetim", "free-p": "E-posta yoluyla birebir danışmanlık oturumu talep edin. Sıfır maliyet, saf değer.",
                 "free-btn": "E-posta ile İletişime Geç",
                 "label": "ENGLISH (EN)"
             }
