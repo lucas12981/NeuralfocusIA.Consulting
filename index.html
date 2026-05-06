@@ -28,10 +28,10 @@
             overflow-x: hidden; 
             scroll-behavior: smooth; 
             line-height: 1.6;
-            overflow-wrap: break-word; /* Evita que los textos largos rompan la pantalla */
+            overflow-wrap: break-word;
         }
 
-        /* --- MOTOR DE FONDO (BLINDADO) --- */
+        /* --- MOTOR DE FONDO --- */
         .video-bg-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
             overflow: hidden; background-color: #050505;
@@ -114,14 +114,13 @@
             font-size: clamp(1.5rem, 5vw, 2.8rem); color: var(--cyan); letter-spacing: 1px; text-transform: uppercase;
         }
 
-        /* --- SECCIÓN LIDERAZGO (CON VIDEO INTEGRADO) --- */
+        /* --- SECCIÓN LIDERAZGO --- */
         .leadership-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px; align-items: center; background: var(--glass);
             border-radius: 30px; padding: 30px; border: 1px solid var(--border); backdrop-filter: blur(15px);
         }
         
-        /* Marco del Video */
         .video-wrapper {
             max-width: 320px;
             margin: 0 auto;
@@ -131,6 +130,7 @@
             border-radius: 24px;
             box-shadow: 0 10px 30px rgba(188, 19, 254, 0.2);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
         }
         .video-wrapper:hover { 
             box-shadow: 0 15px 40px rgba(0, 242, 255, 0.4); 
@@ -208,7 +208,6 @@
             .btn-group { flex-direction: column; width: 100%; }
             .btn { width: 100%; justify-content: center; }
             .video-wrapper { max-width: 280px; }
-            .profile-text img { margin: 0 auto; display: block; }
         }
     </style>
 </head>
@@ -255,7 +254,6 @@
             <span><i class="fab fa-microsoft"></i> MICROSOFT AZURE</span>
             <span><i class="fas fa-robot"></i> OPENAI</span>
             <span><i class="fas fa-lock"></i> ISO 27001</span>
-            
             <span><i class="fab fa-python"></i> PYTHON</span>
             <span><i class="fas fa-microchip"></i> NVIDIA AI</span>
             <span><i class="fab fa-meta"></i> META AI</span>
@@ -272,11 +270,10 @@
 
     <section class="container">
         <div class="leadership-grid">
-            
             <div class="leadership-media">
                 <div class="video-wrapper">
-                    <video class="video-player" controls preload="metadata">
-                        <source src="https://drive.google.com/uc?export=download&id=1ZoJfWTlm1zk0x8etcPM80HY-SqldSyLO" type="video/mp4">
+                    <video class="video-player" autoplay muted loop playsinline controls preload="auto">
+                        <source src="https://www.dropbox.com/scl/fi/2l5ypp3u2i6xrramxm380/V-deo_de_Avatar_IV.mp4?rlkey=alznusshykhqvpliqnodm22mx&raw=1" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
