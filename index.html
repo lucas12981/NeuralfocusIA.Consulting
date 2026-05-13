@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>NeuralFocus AI | Global Strategic Consultancy</title>
-    <meta name="description" content="Independent strategic consulting in AI, Digital Marketing, and Cybersecurity. Directed by Lucas Guzmán. Engineering efficiency for global businesses.">
+    <title>NeuralFocus AI | Autonomous Intelligence Agency</title>
+    <meta name="description" content="Next-Gen AI Automation Agency. We build elite AI agents, high-conversion websites, and autonomous digital ecosystems. Orchestrated by Lucas Guzmán.">
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,9 +14,9 @@
         :root { 
             --cyan: #00f2ff; 
             --purple: #bc13fe; 
-            --dark: #050505; 
-            --glass: rgba(10, 10, 10, 0.8);
-            --border: rgba(255, 255, 255, 0.1);
+            --dark: #030305; 
+            --glass: rgba(10, 10, 12, 0.75);
+            --border: rgba(255, 255, 255, 0.08);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,32 +28,41 @@
             overflow-x: hidden; 
             scroll-behavior: smooth; 
             line-height: 1.6;
-            overflow-wrap: break-word;
         }
 
-        /* --- MOTOR DE FONDO --- */
+        /* --- PREMIUM BACKGROUND ENGINE --- */
         .video-bg-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
-            overflow: hidden; background-color: #050505;
+            overflow: hidden; background-color: #000;
         }
         .video-bg-container video {
             min-width: 100%; min-height: 100%; width: auto; height: auto;
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            object-fit: cover; filter: brightness(0.4) contrast(1.2);
+            object-fit: cover; opacity: 0.35; mix-blend-mode: screen;
         }
         .video-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+            background: radial-gradient(circle at center, transparent 0%, rgba(3,3,5,0.95) 100%);
         }
 
-        /* --- NAVEGACIÓN Y LENGUAJE --- */
-        .lang-switch {
+        /* --- DYNAMIC GREETING & LANG SWITCH --- */
+        .top-bar {
             position: fixed; top: 20px; right: 20px; z-index: 1000;
+            display: flex; gap: 15px; align-items: center;
+        }
+        .greeting-toast {
+            background: linear-gradient(90deg, rgba(188,19,254,0.2), rgba(0,242,255,0.2));
+            border: 1px solid var(--border); padding: 8px 15px; border-radius: 50px;
+            font-family: 'Orbitron'; font-size: 0.75rem; color: #fff; backdrop-filter: blur(10px);
+            animation: slideIn 1s ease-out forwards; opacity: 0; transform: translateY(-20px);
+        }
+        @keyframes slideIn { to { opacity: 1; transform: translateY(0); } }
+
+        .lang-switch {
             background: var(--glass); border: 1px solid var(--cyan);
             padding: 10px 20px; border-radius: 50px; cursor: pointer;
             backdrop-filter: blur(15px); display: flex; align-items: center; gap: 8px;
-            font-family: 'Orbitron'; font-size: 0.7rem; color: #fff;
-            transition: 0.3s;
+            font-family: 'Orbitron'; font-size: 0.7rem; color: #fff; transition: 0.3s;
         }
         .lang-switch:hover { box-shadow: 0 0 15px var(--cyan); }
 
@@ -62,176 +71,129 @@
             min-height: 100vh; display: flex; align-items: center; justify-content: center; 
             text-align: center; padding: 80px 15px; position: relative;
         }
-        #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.2; pointer-events: none; }
+        #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; opacity: 0.3; pointer-events: none; }
         .hero-content { position: relative; z-index: 10; max-width: 1000px; width: 100%; }
         h1 { 
-            font-family: 'Orbitron'; font-size: clamp(1.6rem, 8vw, 5rem); 
+            font-family: 'Orbitron'; font-size: clamp(2rem, 8vw, 5.5rem); 
             font-weight: 900; letter-spacing: 2px; margin-bottom: 20px;
-            background: linear-gradient(to bottom, #fff, #888);
+            background: linear-gradient(to right, #fff, var(--cyan));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            line-height: 1.2;
+            line-height: 1.1; text-transform: uppercase;
         }
         .hero-desc { 
-            font-size: clamp(0.95rem, 3vw, 1.3rem); font-weight: 300; 
-            max-width: 800px; margin: 0 auto 40px; color: #ccc; padding: 0 10px;
+            font-size: clamp(1rem, 3vw, 1.25rem); font-weight: 300; 
+            max-width: 800px; margin: 0 auto 40px; color: #d0d0d0;
         }
 
-        /* --- BOTONES HERO --- */
+        /* --- BUTTONS --- */
         .btn-group { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
         .btn {
-            padding: 15px 30px; border-radius: 50px; font-family: 'Orbitron';
-            font-weight: 700; text-decoration: none; transition: 0.3s;
-            text-transform: uppercase; font-size: clamp(0.7rem, 2vw, 0.8rem); letter-spacing: 1px;
+            padding: 16px 32px; border-radius: 50px; font-family: 'Orbitron';
+            font-weight: 700; text-decoration: none; transition: all 0.3s ease;
+            text-transform: uppercase; font-size: clamp(0.75rem, 2vw, 0.85rem); letter-spacing: 1px;
             display: inline-flex; align-items: center; gap: 10px; cursor: pointer; border: none;
-            text-align: center; justify-content: center;
         }
-        .btn-main { background: var(--cyan); color: #000; }
-        .btn-main:hover { box-shadow: 0 0 25px var(--cyan); transform: scale(1.05); }
-        .btn-alt { border: 1px solid var(--purple); color: #fff; background: rgba(188, 19, 254, 0.1); backdrop-filter: blur(5px); }
-        .btn-alt:hover { background: var(--purple); transform: scale(1.05); }
+        .btn-main { background: var(--cyan); color: #000; box-shadow: 0 0 15px rgba(0,242,255,0.3); }
+        .btn-main:hover { box-shadow: 0 0 30px var(--cyan); transform: translateY(-3px); }
+        .btn-alt { border: 1px solid var(--purple); color: #fff; background: rgba(188, 19, 254, 0.05); backdrop-filter: blur(5px); }
+        .btn-alt:hover { background: rgba(188, 19, 254, 0.2); transform: translateY(-3px); border-color: #fff; }
 
-        /* --- CARRUSEL DE TECNOLOGÍA --- */
-        .tech-carousel {
-            background: rgba(0,0,0,0.6); padding: 30px 0; border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border); overflow: hidden; white-space: nowrap; backdrop-filter: blur(10px);
-        }
-        .tech-track {
-            display: inline-flex; animation: scroll 40s linear infinite; gap: 50px; align-items: center;
-        }
-        .tech-track i, .tech-track span { 
-            font-family: 'Orbitron'; font-size: 1.1rem; color: #777; font-weight: 700;
-            display: flex; align-items: center; gap: 8px;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* --- CONTENEDORES GLOBALES --- */
+        /* --- GLOBAL CONTAINERS --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 80px 15px; position: relative; z-index: 5; }
         .sec-title { 
-            font-family: 'Orbitron'; text-align: center; margin-bottom: 50px;
-            font-size: clamp(1.5rem, 5vw, 2.8rem); color: var(--cyan); letter-spacing: 1px; text-transform: uppercase;
+            font-family: 'Orbitron'; text-align: center; margin-bottom: 60px;
+            font-size: clamp(1.8rem, 5vw, 3rem); color: #fff; letter-spacing: 1px; text-transform: uppercase;
         }
+        .sec-title span { color: var(--cyan); }
 
-        /* --- SECCIÓN LIDERAZGO --- */
+        /* --- LEADERSHIP / ORCHESTRATOR SECTION --- */
         .leadership-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px; align-items: center; background: var(--glass);
-            border-radius: 30px; padding: 30px; border: 1px solid var(--border); backdrop-filter: blur(15px);
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px; align-items: center; background: var(--glass);
+            border-radius: 24px; padding: 40px; border: 1px solid var(--border); backdrop-filter: blur(20px);
         }
-        
         .video-wrapper {
-            max-width: 320px;
-            margin: 0 auto;
-            position: relative;
-            padding: 4px;
-            background: linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%);
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(188, 19, 254, 0.2);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-            overflow: hidden;
+            max-width: 350px; margin: 0 auto; position: relative; padding: 3px;
+            background: linear-gradient(135deg, var(--cyan) 0%, transparent 50%, var(--purple) 100%);
+            border-radius: 24px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
         }
-        .video-wrapper:hover { 
-            box-shadow: 0 15px 40px rgba(0, 242, 255, 0.4); 
-            transform: translateY(-5px); 
-        }
-        .video-player {
-            width: 100%;
-            border-radius: 20px;
-            display: block;
-            background: #000;
-            object-fit: cover;
-        }
-        .video-caption { text-align: center; margin-top: 20px; }
-        .video-caption h4 { font-family: 'Orbitron'; color: #fff; font-size: clamp(1.2rem, 4vw, 1.4rem); letter-spacing: 1px;}
-        .video-caption p { color: var(--cyan); font-family: 'Inter'; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; margin-top: 5px;}
+        .video-player { width: 100%; border-radius: 21px; display: block; background: #000; object-fit: cover; }
+        
+        .profile-text h3 { font-family: 'Orbitron'; font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 5px; color: #fff; }
+        .profile-text .role { color: var(--cyan); font-weight: 700; font-family: 'Orbitron'; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 25px; display: inline-block; padding: 5px 15px; background: rgba(0,242,255,0.1); border-radius: 50px;}
+        .profile-text p { color: #aaa; margin-bottom: 20px; font-size: 1.05rem; line-height: 1.8; }
+        .profile-text p strong { color: #fff; }
 
-        .profile-text h3 { font-family: 'Orbitron'; font-size: clamp(1.5rem, 5vw, 2rem); margin-bottom: 10px; color: #fff; }
-        .profile-text .role { color: var(--cyan); font-weight: 700; font-family: 'Orbitron'; font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 20px; display: block; }
-        .profile-text p { color: #bbb; margin-bottom: 25px; font-size: 1rem; line-height: 1.7; }
-
-        /* --- METODOLOGÍA --- */
-        .method-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;
-        }
-        .method-card {
-            background: rgba(255,255,255,0.03); padding: 25px; border-radius: 15px;
-            border-left: 4px solid var(--cyan); position: relative; transition: 0.3s;
-        }
-        .method-card:hover { background: rgba(0, 242, 255, 0.05); transform: translateY(-5px); }
-        .method-card span { 
-            position: absolute; top: 10px; right: 20px; font-family: 'Orbitron';
-            font-size: 2.5rem; color: rgba(255,255,255,0.05); font-weight: 900;
-        }
-        .method-card h4 { font-family: 'Orbitron'; color: #fff; margin-bottom: 10px; font-size: 1.1rem; }
-        .method-card p { color: #aaa; font-size: 0.9rem; }
-
-        /* --- SERVICIOS & SECTORES --- */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        /* --- SERVICES GRID --- */
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
         .card { 
-            background: var(--glass); border-radius: 20px; border: 1px solid var(--border);
-            overflow: hidden; transition: 0.4s; backdrop-filter: blur(15px);
+            background: linear-gradient(180deg, rgba(20,20,25,0.8) 0%, rgba(10,10,12,0.9) 100%); 
+            border-radius: 20px; border: 1px solid var(--border);
+            overflow: hidden; transition: 0.4s; backdrop-filter: blur(10px); position: relative;
         }
-        .card:hover { transform: translateY(-10px); border-color: var(--cyan); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .card-content { padding: 35px 25px; }
-        .card i { font-size: 2.2rem; color: var(--purple); margin-bottom: 20px; }
-        .card h3 { font-family: 'Orbitron'; margin-bottom: 15px; font-size: 1.2rem; color: #fff; }
-        .card p { color: #ccc; font-size: 0.95rem; }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent); opacity: 0; transition: 0.4s;
+        }
+        .card:hover { transform: translateY(-10px); border-color: rgba(0,242,255,0.3); box-shadow: 0 15px 30px rgba(0,0,0,0.6); }
+        .card:hover::before { opacity: 1; }
+        .card-content { padding: 40px 30px; }
+        .card i { font-size: 2.5rem; color: var(--cyan); margin-bottom: 25px; display: block; }
+        .card h3 { font-family: 'Orbitron'; margin-bottom: 15px; font-size: 1.3rem; color: #fff; }
+        .card p { color: #bbb; font-size: 0.95rem; line-height: 1.6; }
+
+        /* --- BENEFITS (THE ADVANTAGE) --- */
+        .benefits-wrap { background: rgba(0,0,0,0.4); padding: 80px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .benefit-item { display: flex; gap: 20px; margin-bottom: 30px; align-items: flex-start; }
+        .b-icon { width: 60px; height: 60px; border-radius: 15px; background: rgba(188,19,254,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--purple); flex-shrink: 0; border: 1px solid rgba(188,19,254,0.3); }
+        .b-text h4 { font-family: 'Orbitron'; font-size: 1.2rem; margin-bottom: 8px; color: #fff; }
+        .b-text p { color: #aaa; font-size: 0.95rem; }
 
         /* --- AUDIT BANNER --- */
         .audit-banner { 
-            background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(25,25,25,0.9) 100%); 
-            border-radius: 30px; padding: 60px 20px; text-align: center; 
-            border: 1px solid rgba(0, 242, 255, 0.3); backdrop-filter: blur(10px);
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+            background: radial-gradient(circle at top right, rgba(0,242,255,0.15) 0%, rgba(10,10,10,0.9) 60%); 
+            border-radius: 24px; padding: 70px 30px; text-align: center; 
+            border: 1px solid rgba(0, 242, 255, 0.2); backdrop-filter: blur(15px);
         }
-        .audit-banner h2 { font-family: 'Orbitron'; font-size: clamp(1.4rem, 5vw, 2rem); color: #fff; margin-bottom: 15px; }
-        .audit-banner p { color: #ccc; font-size: clamp(0.9rem, 3vw, 1.1rem); margin-bottom: 25px; }
-        .btn-glow { 
-            background: var(--cyan); color: #000; padding: 18px 35px; border-radius: 50px; font-family: 'Orbitron'; font-weight: 900; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 12px; transition: 0.3s;
-            animation: pulse-glow 2s infinite; border: none; font-size: clamp(0.8rem, 2vw, 1rem); cursor: pointer; text-align: center; word-break: break-word;
-        }
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.5); }
-            70% { box-shadow: 0 0 0 20px rgba(0, 242, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0); }
-        }
+        .audit-banner h2 { font-family: 'Orbitron'; font-size: clamp(1.6rem, 5vw, 2.5rem); color: #fff; margin-bottom: 20px; }
+        .audit-banner p { color: #ccc; font-size: clamp(1rem, 3vw, 1.2rem); margin-bottom: 35px; max-width: 600px; margin-inline: auto; }
 
         footer { 
-            padding: 40px 15px; text-align: center; background: #000;
-            border-top: 1px solid var(--border); font-size: 0.85rem; color: #555; position: relative; z-index: 5;
+            padding: 30px 15px; text-align: center; background: #000;
+            border-top: 1px solid var(--border); font-size: 0.9rem; color: #666; font-family: 'Orbitron';
         }
 
         @media (max-width: 768px) {
-            .leadership-grid { padding: 20px; text-align: center; }
+            .leadership-grid { grid-template-columns: 1fr; text-align: center; padding: 25px; }
             .btn-group { flex-direction: column; width: 100%; }
             .btn { width: 100%; justify-content: center; }
-            .video-wrapper { max-width: 280px; }
+            .benefit-item { flex-direction: column; align-items: center; text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <div class="video-bg-container">
-        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&q=80&w=1920">
-            <source src="./273965.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=1920">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-network-connections-loop-27302-large.mp4" type="video/mp4">
         </video>
     </div>
     <div class="video-overlay"></div>
 
-    <div class="lang-switch" onclick="toggleLanguage()">
-        <i class="fas fa-globe"></i>
-        <span id="lang-label">TÜRKÇE (TR)</span>
+    <div class="top-bar">
+        <div class="greeting-toast" id="dynamic-greeting"><i class="fas fa-robot"></i> <span id="g-text"></span></div>
+        <div class="lang-switch" onclick="toggleLanguage()">
+            <i class="fas fa-globe"></i> <span id="lang-label">TÜRKÇE (TR)</span>
+        </div>
     </div>
 
     <header id="hero">
         <div id="particles-js"></div>
         <div class="hero-content">
             <h1 data-i18n="h-title">NEURALFOCUS AI</h1>
-            <p class="hero-desc" data-i18n="h-desc">Strategic AI Consulting, Precision Marketing, and Zero-Trust Cybersecurity. We engineer the future of global businesses.</p>
+            <p class="hero-desc" data-i18n="h-desc">We are an elite AI Automation Agency (AAA). We engineer autonomous digital ecosystems, AI agents, and high-conversion platforms for global scale.</p>
             <div class="btn-group">
-                <a href="mailto:menteglobalempresarial@gmail.com?subject=Consultancy%20Session%20Request" class="btn btn-main">
+                <a href="https://calendly.com/menteglobalempresarial/consultancy-session" target="_blank" class="btn btn-main">
                     <i class="fas fa-calendar-alt"></i> <span data-i18n="b-meet">Consultancy Session</span>
                 </a>
                 <a href="https://wa.me/5492246496971" target="_blank" class="btn btn-alt">
@@ -241,132 +203,84 @@
         </div>
     </header>
 
-    <div class="tech-carousel">
-        <div class="tech-track">
-            <span><i class="fab fa-python"></i> PYTHON</span>
-            <span><i class="fas fa-microchip"></i> NVIDIA AI</span>
-            <span><i class="fab fa-meta"></i> META AI</span>
-            <span><i class="fab fa-aws"></i> AWS CLOUD</span>
-            <span><i class="fas fa-code-branch"></i> TENSORFLOW</span>
-            <span><i class="fab fa-facebook"></i> META ADS</span>
-            <span><i class="fab fa-google"></i> GOOGLE CLOUD</span>
-            <span><i class="fas fa-shield-alt"></i> ZERO-TRUST</span>
-            <span><i class="fab fa-microsoft"></i> MICROSOFT AZURE</span>
-            <span><i class="fas fa-robot"></i> OPENAI</span>
-            <span><i class="fas fa-lock"></i> ISO 27001</span>
-            <span><i class="fab fa-python"></i> PYTHON</span>
-            <span><i class="fas fa-microchip"></i> NVIDIA AI</span>
-            <span><i class="fab fa-meta"></i> META AI</span>
-            <span><i class="fab fa-aws"></i> AWS CLOUD</span>
-            <span><i class="fas fa-code-branch"></i> TENSORFLOW</span>
-            <span><i class="fab fa-facebook"></i> META ADS</span>
-            <span><i class="fab fa-google"></i> GOOGLE CLOUD</span>
-            <span><i class="fas fa-shield-alt"></i> ZERO-TRUST</span>
-            <span><i class="fab fa-microsoft"></i> MICROSOFT AZURE</span>
-            <span><i class="fas fa-robot"></i> OPENAI</span>
-            <span><i class="fas fa-lock"></i> ISO 27001</span>
-        </div>
-    </div>
-
     <section class="container">
         <div class="leadership-grid">
             <div class="leadership-media">
                 <div class="video-wrapper">
                     <video class="video-player" autoplay muted loop playsinline controls preload="auto">
                         <source src="https://www.dropbox.com/scl/fi/2l5ypp3u2i6xrramxm380/V-deo_de_Avatar_IV.mp4?rlkey=alznusshykhqvpliqnodm22mx&raw=1" type="video/mp4">
-                        Your browser does not support the video tag.
                     </video>
-                </div>
-                <div class="video-caption">
-                    <h4 data-i18n="l-name">Lucas Guzmán</h4>
-                    <p data-i18n="l-role-sub">AI & Cyber-Infrastructure Consultant</p>
                 </div>
             </div>
             
             <div class="profile-text">
-                <h3 data-i18n="l-title">Strategic Leadership</h3>
-                <span class="role" data-i18n="l-role">INDEPENDENT STRATEGY ADVISOR</span>
-                <p data-i18n="l-desc">I am an independent consultant specializing in transforming complex data into high-performance business assets. My mission is to guide companies worldwide in integrating elite AI systems, ensuring growth, security, and global competitiveness without the overhead of an in-house team.</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Signature_of_Zuzana_Čaputová.svg" alt="Signature" style="height: 40px; filter: invert(1) opacity(0.4); pointer-events: none;">
+                <h3 data-i18n="l-name">Lucas Guzmán</h3>
+                <span class="role" data-i18n="l-role">CHIEF AI ORCHESTRATOR</span>
+                <p data-i18n="l-desc1">The traditional agency model is dead. Bloated teams, slow delivery times, and human error are obsolete. At NeuralFocus AI, I operate as the strategic core, orchestrating <strong>swarms of specialized AI agents</strong>.</p>
+                <p data-i18n="l-desc2">My mission is to architect and deploy autonomous digital workers and elite platforms for your business. We deliver what human teams do in months, in a fraction of the time, with zero friction and absolute precision.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Signature_of_Zuzana_Čaputová.svg" alt="Signature" style="height: 40px; filter: invert(1) opacity(0.3); pointer-events: none;">
             </div>
         </div>
     </section>
 
     <section class="container">
-        <h2 class="sec-title" data-i18n="m-title">Our Advisory Method</h2>
-        <div class="method-grid">
-            <div class="method-card">
-                <span>01</span>
-                <h4 data-i18n="m1-h">Audit</h4>
-                <p data-i18n="m1-p">Deep advisory analysis of your current digital infrastructure and operational bottlenecks.</p>
-            </div>
-            <div class="method-card">
-                <span>02</span>
-                <h4 data-i18n="m2-h">Strategy</h4>
-                <p data-i18n="m2-p">Bespoke consulting roadmap utilizing advanced AI and Zero-Trust security protocols.</p>
-            </div>
-            <div class="method-card">
-                <span>03</span>
-                <h4 data-i18n="m3-h">Execution</h4>
-                <p data-i18n="m3-p">Strategic oversight for the seamless deployment of systems engineered for zero downtime.</p>
-            </div>
-            <div class="method-card">
-                <span>04</span>
-                <h4 data-i18n="m4-h">Evolution</h4>
-                <p data-i18n="m4-p">Continuous consulting to optimize operations and keep you ahead of the global market.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="container">
-        <h2 class="sec-title" data-i18n="serv-title">Consulting Divisions</h2>
-        <div class="grid-3">
+        <h2 class="sec-title">Our <span>Service Stack</span></h2>
+        <div class="grid-4">
             <div class="card">
                 <div class="card-content">
-                    <i class="fas fa-brain"></i>
-                    <h3 data-i18n="ai-h">AI & Automation Advisory</h3>
-                    <p data-i18n="ai-p">We provide expert consulting on cognitive frameworks to eliminate operational friction, from predictive analysis to process automation.</p>
+                    <i class="fas fa-laptop-code"></i>
+                    <h3 data-i18n="s1-h">High-Conversion Web Ecosystems</h3>
+                    <p data-i18n="s1-p">From lightning-fast landing pages to complex corporate websites. We design, generate, and deploy responsive digital platforms optimized for global SEO and lead capture.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <i class="fas fa-chart-line"></i>
-                    <h3 data-i18n="mkt-h">Growth Strategy Consulting</h3>
-                    <p data-i18n="mkt-p">Data-driven global market penetration strategies. We advise on capturing international B2B leads and optimizing conversion funnels.</p>
+                    <i class="fas fa-network-wired"></i>
+                    <h3 data-i18n="s2-h">Autonomous AI Agents</h3>
+                    <p data-i18n="s2-p">We build custom AI agents that work 24/7. Whether it's a sales agent prospecting leads, or a customer service bot resolving tickets, we automate your workforce.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <i class="fas fa-shield-virus"></i>
-                    <h3 data-i18n="cyb-h">Cybersecurity Strategy</h3>
-                    <p data-i18n="cyb-p">Strategic guidance for enterprise-grade fortitude. We design Zero-Trust protocols and conduct independent vulnerability assessments.</p>
+                    <i class="fas fa-layer-group"></i>
+                    <h3 data-i18n="s3-h">Custom Web Applications</h3>
+                    <p data-i18n="s3-p">Development of tailored SaaS solutions and internal web applications to streamline your business logic, operations, and data management.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 data-i18n="s4-h">Strategic AI & Cyber-Infrastructure</h3>
+                    <p data-i18n="s4-p">High-level consulting to integrate AI into your core business model, protected by enterprise-grade Zero-Trust security protocols.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container">
-        <h2 class="sec-title" data-i18n="sect-title">Global Industries We Advise</h2>
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-content">
-                    <i class="fas fa-industry"></i>
-                    <h3 data-i18n="s1-h">Global Manufacturing</h3>
-                    <p data-i18n="s1-p">Consulting on AI-driven supply chain optimization and predictive maintenance engineering for manufacturing facilities worldwide.</p>
+    <section class="benefits-wrap">
+        <div class="container" style="padding: 0 15px;">
+            <h2 class="sec-title">The <span>Autonomous</span> Advantage</h2>
+            <div class="grid-4" style="gap: 40px;">
+                <div class="benefit-item">
+                    <div class="b-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="b-text">
+                        <h4 data-i18n="b1-h">Hyper-Speed Execution</h4>
+                        <p data-i18n="b1-p">By utilizing AI swarms, development cycles that traditionally took months are compressed into days. Time-to-market is drastically reduced.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <i class="fas fa-ship"></i>
-                    <h3 data-i18n="s2-h">International Trade & Logistics</h3>
-                    <p data-i18n="s2-p">Smart routing architecture and automated inventory advisory for international B2B exporters operating globally.</p>
+                <div class="benefit-item">
+                    <div class="b-icon"><i class="fas fa-coins"></i></div>
+                    <div class="b-text">
+                        <h4 data-i18n="b2-h">Unmatched Cost Efficiency</h4>
+                        <p data-i18n="b2-p">You don't pay for idle time, office space, or massive payrolls. You invest strictly in elite, high-performance technological outputs.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <i class="fas fa-h-square"></i>
-                    <h3 data-i18n="s3-h">Elite Retail & Services</h3>
-                    <p data-i18n="s3-p">Strategic consulting for hyper-personalized client experiences and automated CRM deployment in the high-end sector.</p>
+                <div class="benefit-item">
+                    <div class="b-icon"><i class="fas fa-globe"></i></div>
+                    <div class="b-text">
+                        <h4 data-i18n="b3-h">24/7 Global Operation</h4>
+                        <p data-i18n="b3-p">Our AI systems do not sleep. Your sales, support, and marketing infrastructure operates continuously across all time zones.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -374,75 +288,73 @@
 
     <section class="container">
         <div class="audit-banner">
-            <h2 data-i18n="free-h">Complimentary Strategic Audit</h2>
-            <p data-i18n="free-p">Claim a 1-on-1 advisory session via email. Zero cost, pure value.</p>
-            <a href="mailto:menteglobalempresarial@gmail.com?subject=Strategic%20Audit%20Inquiry" class="btn-glow">
-                <i class="fas fa-envelope"></i> <span data-i18n="free-btn">Contact via Email</span>
+            <h2 data-i18n="free-h">Ready to Automate Your Empire?</h2>
+            <p data-i18n="free-p">Stop competing with outdated human-speed tools. Book a strategic session to discuss your new website, AI agents, or automation roadmap.</p>
+            <a href="https://calendly.com/menteglobalempresarial/consultancy-session" target="_blank" class="btn btn-main" style="padding: 18px 40px; font-size: 1.1rem;">
+                <i class="fas fa-rocket"></i> <span data-i18n="free-btn">Initiate Deployment</span>
             </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 <strong>NeuralFocus AI</strong> | Strategic Consultancy by Lucas Guzmán | Global Operations</p>
+        <p>&copy; 2026 <strong>NeuralFocus AI</strong> | Autonomous AI Agency | Engineered by Lucas Guzmán</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particles-js", { "particles": { "number": { "value": 35 }, "color": { "value": "#00f2ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.15 }, "size": { "value": 1.5 }, "line_linked": { "enable": true, "distance": 150, "color": "#bc13fe", "opacity": 0.08, "width": 1 }, "move": { "enable": true, "speed": 0.8 } } });
+        // Particles Background
+        particlesJS("particles-js", { "particles": { "number": { "value": 40 }, "color": { "value": "#00f2ff" }, "shape": { "type": "circle" }, "opacity": { "value": 0.2 }, "size": { "value": 2 }, "line_linked": { "enable": true, "distance": 150, "color": "#00f2ff", "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 1 } } });
 
+        // Dynamic Turkish Greeting based on Time
+        window.onload = function() {
+            const hour = new Date().getHours();
+            let greeting = "";
+            if (hour < 12) { greeting = "Günaydın"; } 
+            else if (hour < 18) { greeting = "İyi günler"; } 
+            else { greeting = "İyi akşamlar"; }
+            document.getElementById('g-text').innerText = greeting + ", Hoş Geldiniz!";
+        };
+
+        // Bilingual System
         const translations = {
             en: {
                 "h-title": "NEURALFOCUS AI",
-                "h-desc": "Strategic AI Consulting, Precision Marketing, and Zero-Trust Cybersecurity. We engineer the future of global businesses.",
+                "h-desc": "We are an elite AI Automation Agency (AAA). We engineer autonomous digital ecosystems, AI agents, and high-conversion platforms for global scale.",
                 "b-meet": "Consultancy Session",
                 "b-wp": "WhatsApp Direct",
                 "l-name": "Lucas Guzmán",
-                "l-role-sub": "AI & Cyber-Infrastructure Consultant",
-                "l-title": "Strategic Leadership",
-                "l-role": "INDEPENDENT STRATEGY ADVISOR",
-                "l-desc": "I am an independent consultant specializing in transforming complex data into high-performance business assets. My mission is to guide companies worldwide in integrating elite AI systems, ensuring growth, security, and global competitiveness without the overhead of an in-house team.",
-                "m-title": "Our Advisory Method",
-                "m1-h": "Audit", "m1-p": "Deep advisory analysis of your current digital infrastructure and operational bottlenecks.",
-                "m2-h": "Strategy", "m2-p": "Bespoke consulting roadmap utilizing advanced AI and Zero-Trust security protocols.",
-                "m3-h": "Execution", "m3-p": "Strategic oversight for the seamless deployment of systems engineered for zero downtime.",
-                "m4-h": "Evolution", "m4-p": "Continuous consulting to optimize operations and keep you ahead of the global market.",
-                "serv-title": "Consulting Divisions",
-                "ai-h": "AI & Automation Advisory", "ai-p": "We provide expert consulting on cognitive frameworks to eliminate operational friction, from predictive analysis to process automation.",
-                "mkt-h": "Growth Strategy Consulting", "mkt-p": "Data-driven global market penetration strategies. We advise on capturing international B2B leads and optimizing conversion funnels.",
-                "cyb-h": "Cybersecurity Strategy", "cyb-p": "Strategic guidance for enterprise-grade fortitude. We design Zero-Trust protocols and conduct independent vulnerability assessments.",
-                "sect-title": "Global Industries We Advise",
-                "s1-h": "Global Manufacturing", "s1-p": "Consulting on AI-driven supply chain optimization and predictive maintenance engineering for manufacturing facilities worldwide.",
-                "s2-h": "International Trade & Logistics", "s2-p": "Smart routing architecture and automated inventory advisory for international B2B exporters operating globally.",
-                "s3-h": "Elite Retail & Services", "s3-p": "Strategic consulting for hyper-personalized client experiences and automated CRM deployment in the high-end sector.",
-                "free-h": "Complimentary Strategic Audit", "free-p": "Claim a 1-on-1 advisory session via email. Zero cost, pure value.",
-                "free-btn": "Contact via Email",
+                "l-role": "CHIEF AI ORCHESTRATOR",
+                "l-desc1": "The traditional agency model is dead. Bloated teams, slow delivery times, and human error are obsolete. At NeuralFocus AI, I operate as the strategic core, orchestrating <strong>swarms of specialized AI agents</strong>.",
+                "l-desc2": "My mission is to architect and deploy autonomous digital workers and elite platforms for your business. We deliver what human teams do in months, in a fraction of the time, with zero friction and absolute precision.",
+                "s1-h": "High-Conversion Web Ecosystems", "s1-p": "From lightning-fast landing pages to complex corporate websites. We design, generate, and deploy responsive digital platforms optimized for global SEO and lead capture.",
+                "s2-h": "Autonomous AI Agents", "s2-p": "We build custom AI agents that work 24/7. Whether it's a sales agent prospecting leads, or a customer service bot resolving tickets, we automate your workforce.",
+                "s3-h": "Custom Web Applications", "s3-p": "Development of tailored SaaS solutions and internal web applications to streamline your business logic, operations, and data management.",
+                "s4-h": "Strategic AI & Cyber-Infrastructure", "s4-p": "High-level consulting to integrate AI into your core business model, protected by enterprise-grade Zero-Trust security protocols.",
+                "b1-h": "Hyper-Speed Execution", "b1-p": "By utilizing AI swarms, development cycles that traditionally took months are compressed into days. Time-to-market is drastically reduced.",
+                "b2-h": "Unmatched Cost Efficiency", "b2-p": "You don't pay for idle time, office space, or massive payrolls. You invest strictly in elite, high-performance technological outputs.",
+                "b3-h": "24/7 Global Operation", "b3-p": "Our AI systems do not sleep. Your sales, support, and marketing infrastructure operates continuously across all time zones.",
+                "free-h": "Ready to Automate Your Empire?", "free-p": "Stop competing with outdated human-speed tools. Book a strategic session to discuss your new website, AI agents, or automation roadmap.",
+                "free-btn": "Initiate Deployment",
                 "label": "TÜRKÇE (TR)"
             },
             tr: {
                 "h-title": "NEURALFOCUS AI",
-                "h-desc": "Stratejik YZ Danışmanlığı, Hassas Pazarlama ve Sıfır Güven Siber Güvenlik. Küresel işletmelerin geleceğini tasarlıyoruz.",
+                "h-desc": "Biz elit bir YZ Otomasyon Ajansıyız (AAA). Küresel ölçek için otonom dijital ekosistemler, YZ ajanları ve yüksek dönüşümlü platformlar tasarlıyoruz.",
                 "b-meet": "Danışmanlık Oturumu",
                 "b-wp": "WhatsApp Doğrudan",
                 "l-name": "Lucas Guzmán",
-                "l-role-sub": "YZ ve Siber Altyapı Danışmanı",
-                "l-title": "Stratejik Liderlik",
-                "l-role": "BAĞIMSIZ STRATEJİ DANIŞMANI",
-                "l-desc": "Karmaşık verileri yüksek performanslı ticari varlıklara dönüştürme konusunda uzmanlaşmış bağımsız bir danışmanım. Misyonum, büyüme ve küresel rekabet gücünü güvence altına alarak, şirket içi bir ekibin genel giderleri olmadan şirketlere elit YZ sistemlerini entegre etme konusunda rehberlik etmektir.",
-                "m-title": "Danışmanlık Yöntemimiz",
-                "m1-h": "Denetim", "m1-p": "Mevcut dijital altyapınızın ve operasyonel darboğazlarınızın derinlemesine danışmanlık analizi.",
-                "m2-h": "Strateji", "m2-p": "Gelişmiş YZ ve Sıfır Güven güvenlik protokollerini kullanan özel danışmanlık yol haritası.",
-                "m3-h": "Uygulama", "m3-p": "Sıfır kesinti için tasarlanmış sistemlerin sorunsuz kurulumu için stratejik gözetim.",
-                "m4-h": "Gelişim", "m4-p": "Operasyonları optimize etmek ve sizi küresel pazarın önünde tutmak için sürekli danışmanlık.",
-                "serv-title": "Danışmanlık Bölümleri",
-                "ai-h": "YZ ve Otomasyon Danışmanlığı", "ai-p": "Öngörülü analizden süreç otomasyonuna kadar operasyonel sürtünmeyi ortadan kaldırmak için bilişsel çerçeveler üzerinde uzman danışmanlık sağlıyoruz.",
-                "mkt-h": "Büyüme Stratejisi Danışmanlığı", "mkt-p": "Veri odaklı küresel pazar penetrasyon stratejileri. Uluslararası B2B müşteri adaylarını yakalama ve dönüşüm hunilerini optimize etme konusunda tavsiyelerde bulunuyoruz.",
-                "cyb-h": "Siber Güvenlik Stratejisi", "cyb-p": "Kurumsal düzeyde güç için stratejik rehberlik. Sıfır Güven protokolleri tasarlıyor ve bağımsız güvenlik açığı değerlendirmeleri yapıyoruz.",
-                "sect-title": "Danışmanlık Verdiğimiz Küresel Sektörler",
-                "s1-h": "Küresel Üretim", "s1-p": "Dünya çapındaki üretim tesisleri için YZ odaklı tedarik zinciri optimizasyonu ve öngörülü bakım mühendisliği danışmanlığı.",
-                "s2-h": "Uluslararası Ticaret ve Lojistik", "s2-p": "Küresel olarak faaliyet gösteren uluslararası B2B ihracatçıları için akıllı rotalama mimarisi ve otomatik envanter danışmanlığı.",
-                "s3-h": "Seçkin Perakende ve Hizmetler", "s3-p": "Üst düzey sektörde hiper kişiselleştirilmiş müşteri deneyimleri ve otomatik CRM kurulumu için stratejik danışmanlık.",
-                "free-h": "Ücretsiz Stratejik Denetim", "free-p": "E-posta yoluyla birebir danışmanlık oturumu talep edin. Sıfır maliyet, saf değer.",
-                "free-btn": "E-posta ile İletişime Geç",
+                "l-role": "BAŞ YZ ORKESTRATÖRÜ",
+                "l-desc1": "Geleneksel ajans modeli öldü. Şişkin ekipler, yavaş teslimat süreleri ve insan hatası artık modası geçmiş durumda. NeuralFocus AI'da ben, <strong>uzmanlaşmış YZ ajan sürülerini</strong> yöneten stratejik çekirdek olarak faaliyet gösteriyorum.",
+                "l-desc2": "Misyonum, işletmeniz için otonom dijital çalışanlar ve elit platformlar mimarisi oluşturmak ve kurmaktır. İnsan ekiplerinin aylarca yaptığı işi, sıfır sürtünme ve mutlak hassasiyetle çok kısa sürede teslim ediyoruz.",
+                "s1-h": "Yüksek Dönüşümlü Web Ekosistemleri", "s1-p": "Şimşek hızında açılış sayfalarından (landing page) karmaşık kurumsal web sitelerine kadar. Küresel SEO ve potansiyel müşteri yakalama için optimize edilmiş duyarlı dijital platformlar tasarlıyor, üretiyor ve kuruyoruz.",
+                "s2-h": "Otonom YZ Ajanları", "s2-p": "7/24 çalışan özel YZ ajanları oluşturuyoruz. İster müşteri arayan bir satış ajanı, ister biletleri çözen bir müşteri hizmetleri botu olsun, iş gücünüzü otomatikleştiriyoruz.",
+                "s3-h": "Özel Web Uygulamaları", "s3-p": "İş mantığınızı, operasyonlarınızı ve veri yönetiminizi düzene sokmak için özel SaaS çözümlerinin ve dahili web uygulamalarının geliştirilmesi.",
+                "s4-h": "Stratejik YZ ve Siber Altyapı", "s4-p": "Kurumsal düzeyde Sıfır Güven (Zero-Trust) güvenlik protokolleriyle korunan, YZ'yi temel iş modelinize entegre etmek için üst düzey danışmanlık.",
+                "b1-h": "Hiper Hızlı Yürütme", "b1-p": "YZ sürülerini kullanarak, geleneksel olarak aylar süren geliştirme döngüleri günlere sıkıştırılır. Pazara sunma süresi büyük ölçüde azalır.",
+                "b2-h": "Eşsiz Maliyet Verimliliği", "b2-p": "Boşta geçen zaman, ofis alanı veya devasa maaş bordroları için ödeme yapmazsınız. Sıkı bir şekilde elit, yüksek performanslı teknolojik çıktılara yatırım yaparsınız.",
+                "b3-h": "7/24 Küresel Operasyon", "b3-p": "YZ sistemlerimiz uyumaz. Satış, destek ve pazarlama altyapınız tüm zaman dilimlerinde sürekli olarak çalışır.",
+                "free-h": "İmparatorluğunuzu Otomatikleştirmeye Hazır Mısınız?", "free-p": "Modası geçmiş insan hızlı araçlarla rekabet etmeyi bırakın. Yeni web sitenizi, YZ ajanlarınızı veya otomasyon yol haritanızı tartışmak için stratejik bir oturum rezervasyonu yapın.",
+                "free-btn": "Dağıtımı Başlat",
                 "label": "ENGLISH (EN)"
             }
         };
@@ -452,7 +364,11 @@
             currentLang = currentLang === 'en' ? 'tr' : 'en';
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                el.textContent = translations[currentLang][key];
+                if (el.tagName.toLowerCase() === 'strong' || el.querySelector('strong')) {
+                    el.innerHTML = translations[currentLang][key]; // Allow HTML for bold text
+                } else {
+                    el.textContent = translations[currentLang][key];
+                }
             });
             document.getElementById('lang-label').textContent = translations[currentLang]["label"];
         }
